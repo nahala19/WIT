@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academic Records - Internal Marks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/frontend/student/css/internal.css"/>
+</head>
+<body class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="sidebar w-56 text-slate-300 flex flex-col p-3 space-y-3">
+    <div class="px-3 py-3 text-lg font-bold text-white flex items-center gap-2">
+      <div class="w-6 h-6 bg-white/20 rounded-md"></div>
+      Learning Hub
+    </div>
+    <nav class="flex-1 space-y-1">
+      <a href="#" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+      <a href="#" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
+      <a href="#" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
+      <a href="#" class="nav-item active-nav"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
+      <a href="#" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
+      <a href="#" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
+      <a href="#" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+    </nav>
+    <a href="#" class="nav-item border-t border-slate-700 pt-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-4 overflow-hidden">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-4">
+      <div class="flex items-center gap-3">
+        <img src="https://ui-avatars.com/api/?name=Arjun+PS&background=random" class="w-10 h-10 rounded-full border-2 border-white shadow-sm"/>
+        <div>
+          <h1 class="text-lg font-bold text-slate-800">Good Morning, Arjun PS</h1>
+          <p class="text-xs text-slate-500">Semester 5</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Academic Records -->
+    <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
+      <h2 class="section-title mb-4">Academic Records - Internal Marks</h2>
+
+      <!-- Tab Navigation -->
+      <div class="flex gap-4 mb-6 text-sm font-medium text-slate-600">
+        <span class="tab-inactive">Attendance</span>
+        <span class="tab-active">Internal Marks</span>
+        <span class="tab-inactive">Timetable</span>
+        <span class="tab-inactive">Syllabus & Material</span>
+      </div>
+
+      <!-- Internal Marks Table -->
+      <table class="w-full text-sm text-left border border-slate-200">
+        <thead class="bg-slate-100 text-slate-600 font-semibold">
+          <tr>
+            <th class="px-3 py-2">Subject</th>
+            <th class="px-3 py-2">Assignment 1 (10)</th>
+            <th class="px-3 py-2">Mid-Term (50)</th>
+            <th class="px-3 py-2">Lab Record (20)</th>
+            <th class="px-3 py-2">Total Obtained</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-700">
+          <tr class="border-t">
+            <td class="px-3 py-2">Database Management (CS301)</td>
+            <td class="px-3 py-2">9.0</td>
+            <td class="px-3 py-2">45.0</td>
+            <td class="px-3 py-2">18.0</td>
+            <td class="px-3 py-2 font-semibold">72.0</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-3 py-2">Operating Systems (CS302)</td>
+            <td class="px-3 py-2">8.5</td>
+            <td class="px-3 py-2">40.0</td>
+            <td class="px-3 py-2">19.0</td>
+            <td class="px-3 py-2 font-semibold">67.5</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-3 py-2">Software Engineering (CS304)</td>
+            <td class="px-3 py-2">10.0</td>
+            <td class="px-3 py-2">48.0</td>
+            <td class="px-3 py-2">20.0</td>
+            <td class="px-3 py-2 font-semibold">78.0</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-3 py-2">Computer Networks (CS305)</td>
+            <td class="px-3 py-2">9.0</td>
+            <td class="px-3 py-2">42.0</td>
+            <td class="px-3 py-2">17.5</td>
+            <td class="px-3 py-2 font-semibold">68.5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
