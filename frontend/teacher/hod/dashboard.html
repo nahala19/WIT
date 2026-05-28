@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Virtual Data</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/frontend/teacher/hod/css/dashboard.css" />
+</head>
+<body>
+  <div class="vd-app">
+    <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+    <aside id="sidebar" class="sidebar" aria-label="Main navigation">
+      <div class="sidebar-brand-block">
+        <h1 class="sidebar-brand-title">Virtual Data</h1>
+        <span class="sidebar-role-pill">Student</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item active-nav">
+          <i class="fa-solid fa-table-columns"></i>
+          Dashboard
+        </a>
+        <a href="classes.html" class="nav-item">
+          <i class="fa-solid fa-users"></i>
+          My Classes
+        </a>
+        <a href="timetable.html" class="nav-item">
+          <i class="fa-solid fa-calendar-days"></i>
+          Timetable
+        </a>
+        <a href="attendance/index.html" class="nav-item">
+          <i class="fa-solid fa-clipboard-check"></i>
+          Attendance
+        </a>
+        <a href="marks.html" class="nav-item">
+          <i class="fa-solid fa-pen-to-square"></i>
+          Grading
+        </a>
+        <a href="feedback.html" class="nav-item">
+          <i class="fa-solid fa-bell"></i>
+          Notification
+        </a>
+        <a href="settings.html" class="nav-item">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </a>
+      </nav>
+    </aside>
+
+    <div class="vd-main">
+      <header class="vd-header">
+        <div class="vd-header-left">
+          <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>
+            <p class="vd-breadcrumb">Virtual Data</p>
+            <h2 class="vd-page-title">Dashboard</h2>
+          </div>
+        </div>
+        <div class="vd-header-right">
+          <div class="vd-user-block">
+            <p class="vd-user-name">Prof. Priya Sharma</p>
+            <span class="vd-user-role">Teacher</span>
+          </div>
+          <img
+            src="https://ui-avatars.com/api/?name=Priya+Sharma&background=ffffff&color=5b84b1&size=128"
+            alt="Prof. Priya Sharma"
+            class="vd-avatar"
+            width="40"
+            height="40"
+          />
+          <a href="/frontend/login.html" class="vd-logout" aria-label="Log out">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </div>
+      </header>
+
+      <div class="vd-content">
+        <div class="vd-cards-grid">
+          <section class="vd-card" aria-labelledby="timetable-heading">
+            <h3 class="vd-card-title" id="timetable-heading">Today's Timetable (Tuesday)</h3>
+            <ol class="timeline">
+              <li class="timeline-item">
+                <time class="timeline-time" datetime="09:00">09:00 AM –<br />10:00 AM</time>
+                <div class="timeline-track"><span class="timeline-dot" aria-hidden="true"></span></div>
+                <div class="timeline-body">
+                  <strong>CS301: Data Structures (Lecture)</strong>
+                  <span>Room 302</span>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <time class="timeline-time" datetime="11:00">11:00 AM –<br />01:00 PM</time>
+                <div class="timeline-track"><span class="timeline-dot" aria-hidden="true"></span></div>
+                <div class="timeline-body">
+                  <strong>CS302: DBMS Lab (Practical)</strong>
+                  <span>Lab 2</span>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <time class="timeline-time" datetime="14:30">02:30 PM –<br />03:30 PM</time>
+                <div class="timeline-track"><span class="timeline-dot" aria-hidden="true"></span></div>
+                <div class="timeline-body">
+                  <strong>CS305: Operating Systems (Lecture)</strong>
+                  <span>Room 304</span>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <section class="vd-card" aria-labelledby="pending-heading">
+            <h3 class="vd-card-title" id="pending-heading">Pending Works &amp; Grading</h3>
+            <ul class="pending-list">
+              <li class="pending-item">
+                <div class="pending-item-info">
+                  <p class="pending-item-title">Grade CS301 Assignments</p>
+                  <span class="status-badge status-badge--red">15 Pending</span>
+                </div>
+                <a href="marks.html" class="btn-action">Grade Now</a>
+              </li>
+              <li class="pending-item">
+                <div class="pending-item-info">
+                  <p class="pending-item-title">Approve Leave Requests</p>
+                  <span class="status-badge status-badge--yellow">3 New</span>
+                </div>
+                <button type="button" class="btn-action">View</button>
+              </li>
+              <li class="pending-item">
+                <div class="pending-item-info">
+                  <p class="pending-item-title">Submit Internal Marks (CS302)</p>
+                  <span class="status-badge status-badge--tan">Due Tomorrow</span>
+                </div>
+                <a href="marks.html" class="btn-action">Submit</a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/frontend/teacher/hod/js/layout.js"></script>
+</body>
+</html>

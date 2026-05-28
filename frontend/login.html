@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in — Learning Hub LMS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/frontend/css/login.css" />
+</head>
+<body>
+  <div class="login-page">
+    <aside class="login-hero" aria-hidden="true">
+      <div class="hero-content">
+        <div class="hero-brand">
+          <div class="hero-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span class="hero-brand-name">Learning Hub</span>
+        </div>
+        <h2 class="hero-title">Your campus learning, in one place</h2>
+        <p class="hero-desc">
+          Access courses, assignments, grades, and announcements. Built for students, faculty, and administrators.
+        </p>
+        <ul class="hero-features">
+          <li><i class="fa-solid fa-book-open"></i> Course registration & syllabi</li>
+          <li><i class="fa-solid fa-list-check"></i> Tasks, submissions & deadlines</li>
+          <li><i class="fa-solid fa-chart-line"></i> Academic performance tracking</li>
+          <li><i class="fa-solid fa-bell"></i> Real-time notifications</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="login-main">
+      <div class="login-card">
+        <div class="mobile-brand">
+          <div class="mobile-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span class="mobile-brand-name">Learning Hub</span>
+        </div>
+
+        <div class="login-heading">
+          <h1>Welcome back</h1>
+          <p>Sign in to continue to your account</p>
+        </div>
+
+        <div id="form-alert" class="form-alert" role="alert"></div>
+
+        <div class="role-tabs" role="tablist" aria-label="Account type">
+          <button type="button" class="role-tab is-active" data-role="student" role="tab" aria-selected="true">
+            <i class="fa-solid fa-user-graduate"></i>
+            Student
+          </button>
+          <button type="button" class="role-tab" data-role="faculty" role="tab" aria-selected="false">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Faculty
+          </button>
+          <button type="button" class="role-tab" data-role="admin" role="tab" aria-selected="false">
+            <i class="fa-solid fa-user-shield"></i>
+            Admin
+          </button>
+        </div>
+
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="user-id">Student / Employee ID</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-id-card field-icon" aria-hidden="true"></i>
+              <input
+                type="text"
+                id="user-id"
+                name="userId"
+                class="form-input"
+                placeholder="e.g. STU2024001"
+                autocomplete="username"
+                required
+              />
+            </div>
+            <p id="user-id-error" class="field-error">Please enter your ID.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-lock field-icon" aria-hidden="true"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-input"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+                minlength="6"
+              />
+              <button type="button" class="toggle-password" id="toggle-password" aria-label="Show password">
+                <i class="fa-solid fa-eye" id="toggle-password-icon"></i>
+              </button>
+            </div>
+            <p id="password-error" class="field-error">Password must be at least 6 characters.</p>
+          </div>
+
+          <div class="form-row">
+            <label class="checkbox-label">
+              <input type="checkbox" name="remember" id="remember" />
+              Remember me
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-login" id="submit-btn">
+            <span>Sign in</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <p class="login-footer">
+          Need help? <a href="#">Contact IT support</a>
+        </p>
+      </div>
+
+      <p class="login-copyright">&copy; 2026 Learning Hub LMS. All rights reserved.</p>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById('login-form');
+      var userIdInput = document.getElementById('user-id');
+      var passwordInput = document.getElementById('password');
+      var userIdError = document.getElementById('user-id-error');
+      var passwordError = document.getElementById('password-error');
+      var formAlert = document.getElementById('form-alert');
+      var submitBtn = document.getElementById('submit-btn');
+      var roleTabs = document.querySelectorAll('.role-tab');
+      var toggleBtn = document.getElementById('toggle-password');
+      var toggleIcon = document.getElementById('toggle-password-icon');
+
+      var selectedRole = 'student';
+
+      var redirects = {
+        student: '/frontend/student/dashboard.html',
+        faculty: '/frontend/teacher/hod/dashboard.html',
+        hod: '/frontend/teacher/hod/dashboard.html?role=hod',
+        admin: '/frontend/student/dashboard.html'
+      };
+
+      roleTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          selectedRole = tab.getAttribute('data-role');
+          roleTabs.forEach(function (t) {
+            var active = t === tab;
+            t.classList.toggle('is-active', active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          hideAlert();
+        });
+      });
+
+      toggleBtn.addEventListener('click', function () {
+        var show = passwordInput.type === 'password';
+        passwordInput.type = show ? 'text' : 'password';
+        toggleIcon.className = show ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+        toggleBtn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+      });
+
+      function hideAlert() {
+        formAlert.classList.remove('is-visible');
+        formAlert.textContent = '';
+      }
+
+      function showAlert(message) {
+        formAlert.textContent = message;
+        formAlert.classList.add('is-visible');
+      }
+
+      function setFieldError(input, errorEl, message, show) {
+        input.classList.toggle('is-error', show);
+        errorEl.textContent = message;
+        errorEl.classList.toggle('is-visible', show);
+      }
+
+      function validate() {
+        var valid = true;
+        var userId = userIdInput.value.trim();
+        var password = passwordInput.value;
+
+        if (!userId) {
+          setFieldError(userIdInput, userIdError, 'Please enter your ID.', true);
+          valid = false;
+        } else {
+          setFieldError(userIdInput, userIdError, '', false);
+        }
+
+        if (!password || password.length < 6) {
+          setFieldError(passwordInput, passwordError, 'Password must be at least 6 characters.', true);
+          valid = false;
+        } else {
+          setFieldError(passwordInput, passwordError, '', false);
+        }
+
+        return valid;
+      }
+
+      userIdInput.addEventListener('input', function () {
+        setFieldError(userIdInput, userIdError, '', false);
+        hideAlert();
+      });
+
+      passwordInput.addEventListener('input', function () {
+        setFieldError(passwordInput, passwordError, '', false);
+        hideAlert();
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideAlert();
+
+        if (!validate()) return;
+
+        submitBtn.disabled = true;
+        submitBtn.querySelector('span').textContent = 'Signing in…';
+
+        setTimeout(function () {
+          if (document.getElementById('remember').checked) {
+            try {
+              localStorage.setItem('lms_remember', userIdInput.value.trim());
+            } catch (err) { /* ignore */ }
+          }
+          window.location.href = redirects[selectedRole] || redirects.student;
+        }, 600);
+      });
+
+      try {
+        var saved = localStorage.getItem('lms_remember');
+        if (saved) {
+          userIdInput.value = saved;
+          document.getElementById('remember').checked = true;
+        }
+      } catch (err) { /* ignore */ }
+    })();
+  </script>
+</body>
+</html>

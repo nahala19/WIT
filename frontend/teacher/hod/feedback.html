@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback — Learning Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/frontend/student/css/dashboard.css" />
+  <link rel="stylesheet" href="/frontend/teacher/hod/css/faculty.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+    <aside id="sidebar" class="sidebar" aria-label="Faculty navigation">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <span>Learning Hub</span>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-group-label">Teaching</span>
+        <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        <a href="classes.html" class="nav-item"><i class="fa-solid fa-users-rectangle"></i> My Classes</a>
+        <a href="attendance/index.html" class="nav-item"><i class="fa-solid fa-clipboard-check"></i> Attendance</a>
+        <a href="marks.html" class="nav-item"><i class="fa-solid fa-pen-to-square"></i> Marks</a>
+        <a href="assignments/index.html" class="nav-item"><i class="fa-solid fa-file-lines"></i> Assignments</a>
+        <a href="materials.html" class="nav-item"><i class="fa-solid fa-folder-open"></i> Materials</a>
+        <a href="timetable.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Timetable</a>
+        <span class="nav-group-label">Communication</span>
+        <a href="feedback.html" class="nav-item active-nav"><i class="fa-solid fa-comment-dots"></i> Feedback</a>
+        <a href="notifications/index.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notifications</a>
+        <span class="nav-group-label">Insights</span>
+        <a href="reports.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Reports</a>
+        <span class="nav-group-label nav-hod-only">Department</span>
+        <a href="department/overview.html" class="nav-item nav-hod-only"><i class="fa-solid fa-building-columns"></i> Overview</a>
+        <a href="department/faculty.html" class="nav-item nav-hod-only"><i class="fa-solid fa-user-tie"></i> Faculty</a>
+        <a href="department/allocations.html" class="nav-item nav-hod-only"><i class="fa-solid fa-table-list"></i> Allocations</a>
+        <a href="department/approvals.html" class="nav-item nav-hod-only"><i class="fa-solid fa-circle-check"></i> Approvals</a>
+        <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <a href="/frontend/login.html" class="nav-item nav-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+          <div class="greeting-block">
+            <img src="https://ui-avatars.com/api/?name=Asha+Menon&background=3b82f6&color=fff" alt="" class="greeting-avatar" />
+            <div>
+              <h1 class="greeting-title">Feedback inbox</h1>
+              <p class="greeting-date">3 unread messages</p>
+            </div>
+          </div>
+        </div>
+        <div class="user-pill">
+          <div class="user-pill-info">
+            <p class="user-pill-name" id="user-display-name">Dr. Asha Menon</p>
+            <span class="user-pill-role" id="user-role-badge">Teacher</span>
+          </div>
+          <a href="/frontend/login.html" class="logout-btn" aria-label="Log out"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
+      </header>
+
+      <div class="dashboard-panel">
+        <div class="feedback-layout">
+          <div class="feedback-list" role="list">
+            <a href="#" class="feedback-item is-active">
+              <strong>Arjun Nair</strong> <span class="badge badge-warning" style="float:right;">New</span>
+              <p style="margin:0.25rem 0 0;font-size:0.8125rem;color:var(--text-muted);">CS301 · Lab session timing</p>
+              <span style="font-size:0.6875rem;color:var(--text-muted);">Today, 9:42 AM</span>
+            </a>
+            <a href="#" class="feedback-item">
+              <strong>Priya Sharma</strong>
+              <p style="margin:0.25rem 0 0;font-size:0.8125rem;color:var(--text-muted);">Assignment rubric clarification</p>
+              <span style="font-size:0.6875rem;color:var(--text-muted);">Yesterday</span>
+            </a>
+            <a href="#" class="feedback-item">
+              <strong>Class rep — CS304-B</strong> <span class="badge badge-warning" style="float:right;">New</span>
+              <p style="margin:0.25rem 0 0;font-size:0.8125rem;color:var(--text-muted);">Request for extra tutorial</p>
+              <span style="font-size:0.6875rem;color:var(--text-muted);">May 19</span>
+            </a>
+            <a href="#" class="feedback-item">
+              <strong>Karthik Iyer</strong>
+              <p style="margin:0.25rem 0 0;font-size:0.8125rem;color:var(--text-muted);">Thank you — IA feedback</p>
+              <span style="font-size:0.6875rem;color:var(--text-muted);">May 17</span>
+            </a>
+          </div>
+          <div class="feedback-detail">
+            <div class="page-toolbar" style="margin-bottom:0.75rem;">
+              <div>
+                <h3 style="margin:0;font-size:1rem;">Arjun Nair · 21CSE001</h3>
+                <p style="margin:0.25rem 0 0;font-size:0.8125rem;color:var(--text-muted);">CS301 — Database Management</p>
+              </div>
+              <span class="badge badge-info">Open</span>
+            </div>
+            <div style="padding:1rem;background:#f8fafc;border-radius:0.625rem;margin-bottom:1rem;font-size:0.875rem;">
+              <p style="margin:0;">Good morning, Dr. Menon. Could we reschedule Friday's lab to the afternoon slot? Several students have a clash with CS302 lab in the morning. Thank you.</p>
+              <p style="margin:0.5rem 0 0;font-size:0.75rem;color:var(--text-muted);">Sent Today, 9:42 AM</p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reply">Your reply</label>
+              <textarea id="reply" class="form-textarea" rows="4" placeholder="Type your response…"></textarea>
+            </div>
+            <div style="display:flex;gap:0.5rem;">
+              <button type="button" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Send reply</button>
+              <button type="button" class="btn-secondary">Mark resolved</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/frontend/teacher/hod/js/session.js"></script>
+  <script src="/frontend/teacher/hod/js/layout.js"></script>
+</body>
+</html>

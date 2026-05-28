@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marks — Learning Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/frontend/student/css/dashboard.css" />
+  <link rel="stylesheet" href="/frontend/teacher/hod/css/faculty.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+    <aside id="sidebar" class="sidebar" aria-label="Faculty navigation">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <span>Learning Hub</span>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-group-label">Teaching</span>
+        <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        <a href="classes.html" class="nav-item"><i class="fa-solid fa-users-rectangle"></i> My Classes</a>
+        <a href="attendance/index.html" class="nav-item"><i class="fa-solid fa-clipboard-check"></i> Attendance</a>
+        <a href="marks.html" class="nav-item active-nav"><i class="fa-solid fa-pen-to-square"></i> Marks</a>
+        <a href="assignments/index.html" class="nav-item"><i class="fa-solid fa-file-lines"></i> Assignments</a>
+        <a href="materials.html" class="nav-item"><i class="fa-solid fa-folder-open"></i> Materials</a>
+        <a href="timetable.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Timetable</a>
+        <span class="nav-group-label">Communication</span>
+        <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback</a>
+        <a href="notifications/index.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notifications</a>
+        <span class="nav-group-label">Insights</span>
+        <a href="reports.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Reports</a>
+        <span class="nav-group-label nav-hod-only">Department</span>
+        <a href="department/overview.html" class="nav-item nav-hod-only"><i class="fa-solid fa-building-columns"></i> Overview</a>
+        <a href="department/faculty.html" class="nav-item nav-hod-only"><i class="fa-solid fa-user-tie"></i> Faculty</a>
+        <a href="department/allocations.html" class="nav-item nav-hod-only"><i class="fa-solid fa-table-list"></i> Allocations</a>
+        <a href="department/approvals.html" class="nav-item nav-hod-only"><i class="fa-solid fa-circle-check"></i> Approvals</a>
+        <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <a href="/frontend/login.html" class="nav-item nav-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+          <div class="greeting-block">
+            <img src="https://ui-avatars.com/api/?name=Asha+Menon&background=3b82f6&color=fff" alt="" class="greeting-avatar" />
+            <div>
+              <h1 class="greeting-title">Marks entry</h1>
+              <p class="greeting-date">Internal assessments · Semester 5</p>
+            </div>
+          </div>
+        </div>
+        <div class="user-pill">
+          <div class="user-pill-info">
+            <p class="user-pill-name" id="user-display-name">Dr. Asha Menon</p>
+            <span class="user-pill-role" id="user-role-badge">Teacher</span>
+          </div>
+          <a href="/frontend/login.html" class="logout-btn" aria-label="Log out"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
+      </header>
+
+      <div class="dashboard-panel">
+        <div class="page-toolbar">
+          <div class="filter-bar">
+            <select class="form-select" style="width:auto;" aria-label="Class">
+              <option>CS301 — Section A</option>
+              <option>CS304 — Section B</option>
+            </select>
+          </div>
+          <button type="button" class="btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save all</button>
+        </div>
+
+        <nav class="tab-bar" aria-label="Assessment type">
+          <a href="#" class="is-active">IA-1 (20)</a>
+          <a href="#">IA-2 (20)</a>
+          <a href="#">Assignment (10)</a>
+          <a href="#">Lab (25)</a>
+          <a href="#">End Sem</a>
+        </nav>
+
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Roll</th>
+                <th>Student</th>
+                <th>IA-1 / 20</th>
+                <th>Status</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>21CSE001</td>
+                <td>Arjun Nair</td>
+                <td><input type="number" class="marks-input" value="18" min="0" max="20" /></td>
+                <td><span class="badge badge-success">Saved</span></td>
+                <td><input type="text" class="form-input" style="width:8rem;padding:0.25rem 0.5rem;" placeholder="—" /></td>
+              </tr>
+              <tr>
+                <td>21CSE002</td>
+                <td>Priya Sharma</td>
+                <td><input type="number" class="marks-input" value="16" min="0" max="20" /></td>
+                <td><span class="badge badge-success">Saved</span></td>
+                <td><input type="text" class="form-input" style="width:8rem;padding:0.25rem 0.5rem;" placeholder="—" /></td>
+              </tr>
+              <tr>
+                <td>21CSE003</td>
+                <td>Rahul Verma</td>
+                <td><input type="number" class="marks-input" value="" min="0" max="20" placeholder="—" /></td>
+                <td><span class="badge badge-warning">Pending</span></td>
+                <td><input type="text" class="form-input" style="width:8rem;padding:0.25rem 0.5rem;" placeholder="Absent" /></td>
+              </tr>
+              <tr>
+                <td>21CSE004</td>
+                <td>Sneha Patel</td>
+                <td><input type="number" class="marks-input" value="19" min="0" max="20" /></td>
+                <td><span class="badge badge-success">Saved</span></td>
+                <td><input type="text" class="form-input" style="width:8rem;padding:0.25rem 0.5rem;" placeholder="—" /></td>
+              </tr>
+              <tr>
+                <td>21CSE005</td>
+                <td>Karthik Iyer</td>
+                <td><input type="number" class="marks-input" value="14" min="0" max="20" /></td>
+                <td><span class="badge badge-warning">Pending</span></td>
+                <td><input type="text" class="form-input" style="width:8rem;padding:0.25rem 0.5rem;" placeholder="—" /></td>
+              </tr>
+              <tr>
+                <td>21CSE006</td>
+                <td>Ananya Das</td>
+                <td><input type="number" class="marks-input" value="17" min="0" max="20" /></td>
+                <td><span class="badge badge-success">Saved</span></td>
+                <td><input type="text" class="form-input" style="width:8rem;padding:0.25rem 0.5rem;" placeholder="—" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.8125rem;color:var(--text-muted);">Showing 6 of 48 students · Class average IA-1: <strong>16.8</strong></p>
+      </div>
+    </main>
+  </div>
+  <script src="/frontend/teacher/hod/js/session.js"></script>
+  <script src="/frontend/teacher/hod/js/layout.js"></script>
+</body>
+</html>

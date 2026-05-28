@@ -8,108 +8,183 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="/frontend/student/css/dashboard.css"/>
 </head>
-<body class="flex min-h-screen">
+<body>
+  <div class="app-layout">
+    <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
 
-  <!-- Sidebar -->
-  <aside class="sidebar w-56 text-slate-300 flex flex-col p-3 space-y-3">
-    <div class="px-3 py-3 text-lg font-bold text-white flex items-center gap-2">
-      <div class="w-6 h-6 bg-white/20 rounded-md"></div>
-      Learning Hub
-    </div>
-    <nav class="flex-1 space-y-1">
-      <a href="dashboard.html" class="nav-item active-nav"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-      <a href="internal.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
-      <a href="course.html" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
-      <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
-      <a href="attendance.html" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
-      <a href="notification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
-      <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
-    </nav>
-    <a href="#" class="nav-item border-t border-slate-700 pt-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="flex-1 p-4 overflow-hidden">
-    <!-- Header -->
-    <header class="flex justify-between items-center mb-4">
-      <div class="flex items-center gap-3">
-        <img src="https://ui-avatars.com/api/?name=Emily+Johnson&background=random" class="w-10 h-10 rounded-full border-2 border-white shadow-sm"/>
-        <div>
-          <h1 class="text-lg font-bold text-slate-800">Good Morning, Emily Johnson</h1>
-          <p class="text-xs text-slate-500">Tuesday, December 30</p>
-        </div>
+    <aside id="sidebar" class="sidebar" aria-label="Main navigation">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <span>Learning Hub</span>
       </div>
-      <div class="flex items-center gap-3">
-        <div class="text-right">
-          <p class="text-sm font-bold text-slate-700 leading-none">Emily Johnson</p>
-          <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded uppercase font-bold">Student</span>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item active-nav"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        <a href="internal.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
+        <a href="course.html" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
+        <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
+        <a href="attendance.html" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
+        <a href="notification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
+        <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <a href="/frontend/login.html" class="nav-item nav-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="greeting-block">
+            <img src="https://ui-avatars.com/api/?name=Emily+Johnson&background=3b82f6&color=fff" alt="" class="greeting-avatar"/>
+            <div>
+              <h1 class="greeting-title">Good morning, Emily</h1>
+              <p class="greeting-date">Tuesday, December 30</p>
+            </div>
+          </div>
         </div>
-        <i class="fa-solid fa-arrow-right-from-bracket text-slate-400 cursor-pointer hover:text-red-500 transition"></i>
+        <div class="user-pill">
+          <div class="user-pill-info">
+            <p class="user-pill-name">Emily Johnson</p>
+            <span class="user-pill-role">Student</span>
+          </div>
+          <a href="/frontend/login.html" class="logout-btn" aria-label="Log out">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </div>
+      </header>
+
+      <div class="dashboard-panel">
+        <section>
+          <div class="section-header">
+            <h2 class="section-title">Academic Snapshot</h2>
+            <span class="section-badge">Spring 2026</span>
+          </div>
+          <div class="snapshot-grid">
+            <article class="snapshot-card">
+              <div class="snapshot-card-header">
+                <div>
+                  <p class="card-label">Current GPA</p>
+                  <h3 class="card-value">3.85</h3>
+                </div>
+                <div class="snapshot-icon"><i class="fa-solid fa-chart-line"></i></div>
+              </div>
+              <a href="#" class="card-link">View grade report <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+            <article class="snapshot-card">
+              <div class="snapshot-card-header">
+                <div>
+                  <p class="card-label">Registered Courses</p>
+                  <h3 class="card-value">5</h3>
+                </div>
+                <div class="snapshot-icon"><i class="fa-solid fa-book-open"></i></div>
+              </div>
+              <a href="course.html" class="card-link">Manage courses <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+            <article class="snapshot-card">
+              <div class="snapshot-card-header">
+                <div>
+                  <p class="card-label">Pending Tasks</p>
+                  <h3 class="card-value accent-warning">7</h3>
+                </div>
+                <div class="snapshot-icon warning"><i class="fa-solid fa-clock"></i></div>
+              </div>
+              <a href="internal.html" class="card-link">Go to tasks <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-header">
+            <h2 class="section-title">Quick Access</h2>
+            <span class="section-badge">6 modules</span>
+          </div>
+          <div class="quick-grid">
+            <article class="quick-access-card">
+              <div class="quick-card-top">
+                <div class="quick-icon blue"><i class="fa-solid fa-list-check"></i></div>
+                <h4 class="card-title">Tasks & Submissions</h4>
+              </div>
+              <p class="card-desc">View assignments, deadlines, and submit completed work.</p>
+              <button type="button" class="card-btn" onclick="location.href='internal.html'">Go to Tasks</button>
+            </article>
+            <article class="quick-access-card">
+              <div class="quick-card-top">
+                <div class="quick-icon violet"><i class="fa-solid fa-book"></i></div>
+                <h4 class="card-title">Course Selection</h4>
+              </div>
+              <p class="card-desc">Explore courses, manage registration, and plan your schedule.</p>
+              <button type="button" class="card-btn" onclick="location.href='course.html'">Go to Courses</button>
+            </article>
+            <article class="quick-access-card">
+              <div class="quick-card-top">
+                <div class="quick-icon emerald"><i class="fa-solid fa-chart-pie"></i></div>
+                <h4 class="card-title">Academic Performance</h4>
+              </div>
+              <p class="card-desc">Monitor progress, grade reports, and track achievements.</p>
+              <button type="button" class="card-btn" onclick="location.href='attendance.html'">View Performance</button>
+            </article>
+            <article class="quick-access-card">
+              <div class="quick-card-top">
+                <div class="quick-icon amber"><i class="fa-solid fa-bell"></i></div>
+                <h4 class="card-title">Notifications</h4>
+              </div>
+              <p class="card-desc">Announcements, alerts, and updates from your college.</p>
+              <button type="button" class="card-btn" onclick="location.href='notification.html'">View Notifications</button>
+            </article>
+            <article class="quick-access-card">
+              <div class="quick-card-top">
+                <div class="quick-icon rose"><i class="fa-solid fa-comment-dots"></i></div>
+                <h4 class="card-title">Feedback & Grievance</h4>
+              </div>
+              <p class="card-desc">Submit feedback, suggestions, or report issues to administration.</p>
+              <button type="button" class="card-btn" onclick="location.href='feedback.html'">Open Feedback</button>
+            </article>
+            <article class="quick-access-card">
+              <div class="quick-card-top">
+                <div class="quick-icon slate"><i class="fa-solid fa-gear"></i></div>
+                <h4 class="card-title">Settings</h4>
+              </div>
+              <p class="card-desc">Manage your profile, privacy, and communication preferences.</p>
+              <button type="button" class="card-btn" onclick="location.href='settings.html'">Open Settings</button>
+            </article>
+          </div>
+        </section>
       </div>
-    </header>
+    </main>
+  </div>
 
-    <!-- Dashboard Card -->
-    <div class="bg-white rounded-2xl p-4 card-shadow h-[calc(100vh-7rem)] overflow-hidden">
-      
-      <!-- Academic Snapshot -->
-      <section class="mb-3">
-        <h2 class="section-title">Academic Snapshot</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <div class="snapshot-card">
-            <p class="card-label">Current GPA</p>
-            <h3 class="card-value">3.85</h3>
-            <a href="#" class="card-link">View Grade Report</a>
-          </div>
-          <div class="snapshot-card">
-            <p class="card-label">Registered Courses</p>
-            <h3 class="card-value">5</h3>
-            <a href="#" class="card-link">Manage Courses</a>
-          </div>
-          <div class="snapshot-card">
-            <p class="card-label">Pending Tasks</p>
-            <h3 class="card-value text-orange-500">7</h3>
-            <a href="#" class="card-link">Go to Tasks</a>
-          </div>
-        </div>
-      </section>
+  <script>
+    (function () {
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebar-overlay');
+      var toggle = document.getElementById('menu-toggle');
 
-      <!-- Quick Access -->
-      <section>
-        <h2 class="section-title">Quick Access</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <div class="quick-access-card">
-            <h4 class="card-title">Tasks & Submissions</h4>
-            <p class="card-desc">View all your assignments, deadlines, and submit your completed work.</p>
-            <button class="card-btn">Go to Tasks & Submissions</button>
-          </div>
-          <div class="quick-access-card">
-            <h4 class="card-title">Course Selection</h4>
-            <p class="card-desc">Explore available courses, manage your registration, and plan your academic schedule.</p>
-            <button class="card-btn">Go to Course Selection</button>
-          </div>
-          <div class="quick-access-card">
-            <h4 class="card-title">Academic Performance</h4>
-            <p class="card-desc">Monitor your progress, review detailed grade reports, and track your achievements.</p>
-            <button class="card-btn">Go to Academic Performance</button>
-          </div>
-          <div class="quick-access-card">
-            <h4 class="card-title">Notifications</h4>
-            <p class="card-desc">Stay informed with important announcements, alerts, and updates from your college.</p>
-            <button class="card-btn">Go to Notifications</button>
-          </div>
-          <div class="quick-access-card">
-            <h4 class="card-title">Feedback & Grievance</h4>
-            <p class="card-desc">Submit your feedback, suggestions, or report any issues to the college administration.</p>
-            <button class="card-btn">Go to Feedback & Grievance</button>
-          </div>
-          <div class="quick-access-card">
-            <h4 class="card-title">Settings</h4>
-            <p class="card-desc">Manage your personal profile, privacy settings, and communication preferences.</p>
-            <button class="card-btn">Go to Settings</button>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
+      function setOpen(open) {
+        sidebar.classList.toggle('is-open', open);
+        overlay.classList.toggle('is-visible', open);
+        overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+
+      toggle.addEventListener('click', function () {
+        setOpen(!sidebar.classList.contains('is-open'));
+      });
+
+      overlay.addEventListener('click', function () { setOpen(false); });
+
+      sidebar.querySelectorAll('.nav-item').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.innerWidth <= 768) setOpen(false);
+        });
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) setOpen(false);
+      });
+    })();
+  </script>
 </body>
 </html>

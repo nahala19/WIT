@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports — Learning Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/frontend/student/css/dashboard.css" />
+  <link rel="stylesheet" href="/frontend/teacher/hod/css/faculty.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+    <aside id="sidebar" class="sidebar" aria-label="Faculty navigation">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <span>Learning Hub</span>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-group-label">Teaching</span>
+        <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        <a href="classes.html" class="nav-item"><i class="fa-solid fa-users-rectangle"></i> My Classes</a>
+        <a href="attendance/index.html" class="nav-item"><i class="fa-solid fa-clipboard-check"></i> Attendance</a>
+        <a href="marks.html" class="nav-item"><i class="fa-solid fa-pen-to-square"></i> Marks</a>
+        <a href="assignments/index.html" class="nav-item"><i class="fa-solid fa-file-lines"></i> Assignments</a>
+        <a href="materials.html" class="nav-item"><i class="fa-solid fa-folder-open"></i> Materials</a>
+        <a href="timetable.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Timetable</a>
+        <span class="nav-group-label">Communication</span>
+        <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback</a>
+        <a href="notifications/index.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notifications</a>
+        <span class="nav-group-label">Insights</span>
+        <a href="reports.html" class="nav-item active-nav"><i class="fa-solid fa-chart-pie"></i> Reports</a>
+        <span class="nav-group-label nav-hod-only">Department</span>
+        <a href="department/overview.html" class="nav-item nav-hod-only"><i class="fa-solid fa-building-columns"></i> Overview</a>
+        <a href="department/faculty.html" class="nav-item nav-hod-only"><i class="fa-solid fa-user-tie"></i> Faculty</a>
+        <a href="department/allocations.html" class="nav-item nav-hod-only"><i class="fa-solid fa-table-list"></i> Allocations</a>
+        <a href="department/approvals.html" class="nav-item nav-hod-only"><i class="fa-solid fa-circle-check"></i> Approvals</a>
+        <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+      <a href="/frontend/login.html" class="nav-item nav-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+          <div class="greeting-block">
+            <img src="https://ui-avatars.com/api/?name=Asha+Menon&background=3b82f6&color=fff" alt="" class="greeting-avatar" />
+            <div>
+              <h1 class="greeting-title">Reports</h1>
+              <p class="greeting-date">Class & assessment summaries</p>
+            </div>
+          </div>
+        </div>
+        <div class="user-pill">
+          <div class="user-pill-info">
+            <p class="user-pill-name" id="user-display-name">Dr. Asha Menon</p>
+            <span class="user-pill-role" id="user-role-badge">Teacher</span>
+          </div>
+          <a href="/frontend/login.html" class="logout-btn" aria-label="Log out"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
+      </header>
+
+      <div class="dashboard-panel">
+        <div class="filter-bar" style="margin-bottom:1rem;">
+          <select class="form-select" style="width:auto;" aria-label="Report type">
+            <option>Class performance</option>
+            <option>Attendance summary</option>
+            <option>Assignment completion</option>
+          </select>
+          <select class="form-select" style="width:auto;" aria-label="Semester">
+            <option>Semester 5</option>
+            <option>Semester 4</option>
+          </select>
+          <select class="form-select" style="width:auto;" aria-label="Class">
+            <option>All my classes</option>
+            <option>CS301 — Section A</option>
+            <option>CS304 — Section B</option>
+          </select>
+          <button type="button" class="btn-primary"><i class="fa-solid fa-file-export"></i> Export CSV</button>
+        </div>
+
+        <div class="snapshot-grid" style="margin-bottom:1.5rem;">
+          <article class="snapshot-card">
+            <div class="snapshot-card-header">
+              <div>
+                <p class="card-label">Avg attendance</p>
+                <h3 class="card-value">87%</h3>
+              </div>
+              <div class="snapshot-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+            </div>
+          </article>
+          <article class="snapshot-card">
+            <div class="snapshot-card-header">
+              <div>
+                <p class="card-label">Avg IA-1 score</p>
+                <h3 class="card-value">16.4</h3>
+              </div>
+              <div class="snapshot-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+            </div>
+          </article>
+          <article class="snapshot-card">
+            <div class="snapshot-card-header">
+              <div>
+                <p class="card-label">At-risk students</p>
+                <h3 class="card-value accent-warning">5</h3>
+              </div>
+              <div class="snapshot-icon warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Students</th>
+                <th>Attendance %</th>
+                <th>IA-1 avg</th>
+                <th>Assignments done</th>
+                <th>At risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CS301-A</strong><br /><span style="font-size:0.75rem;color:var(--text-muted);">Database Management</span></td>
+                <td>48</td>
+                <td>89%</td>
+                <td>16.8</td>
+                <td>92%</td>
+                <td><span class="badge badge-warning">2</span></td>
+              </tr>
+              <tr>
+                <td><strong>CS304-B</strong><br /><span style="font-size:0.75rem;color:var(--text-muted);">Software Engineering</span></td>
+                <td>50</td>
+                <td>85%</td>
+                <td>15.9</td>
+                <td>88%</td>
+                <td><span class="badge badge-warning">3</span></td>
+              </tr>
+              <tr>
+                <td><strong>CS306-A</strong><br /><span style="font-size:0.75rem;color:var(--text-muted);">Web Technologies</span></td>
+                <td>47</td>
+                <td>88%</td>
+                <td>16.6</td>
+                <td>94%</td>
+                <td><span class="badge badge-success">0</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/frontend/teacher/hod/js/session.js"></script>
+  <script src="/frontend/teacher/hod/js/layout.js"></script>
+</body>
+</html>
