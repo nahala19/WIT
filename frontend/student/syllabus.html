@@ -37,38 +37,87 @@
 
     <!-- Academic Records -->
     <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
-      <h2 class="section-title mb-4">Academic Records - Syllabus & Material</h2>
+      <div class="card-header mb-4 flex items-center justify-between">
+        <h2 class="section-title">Academic Records - Syllabus & Material</h2>
+        <select class="semester-select">
+          <option>Semester 5</option>
+          <option>Semester 6</option>
+        </select>
+      </div>
 
       <!-- Tab Navigation -->
-      <div class="flex gap-4 mb-6 text-sm font-medium text-slate-600">
-        <span class="tab-inactive">Attendance</span>
-        <span class="tab-inactive">Internal Marks</span>
-        <span class="tab-inactive">Timetable</span>
+      <div class="flex flex-wrap gap-4 mb-6 text-sm font-medium text-slate-600">
+        <a href="attendance.html" class="tab-inactive">Attendance</a>
+        <a href="internal.html" class="tab-inactive">Internal Marks</a>
+        <a href="timetable.html" class="tab-inactive">Timetable</a>
         <span class="tab-active">Syllabus & Material</span>
       </div>
 
       <!-- Module List -->
-      <div class="space-y-6">
-        <div class="module-card">
-          <h3 class="module-title">Module 1: Introduction to Data Structures</h3>
-          <ul class="module-list">
-            <li><a href="#" class="module-link">Module 1 Notes PDF</a></li>
-            <li><a href="#" class="module-link">Reference Link: Video Lecture</a></li>
-            <li><a href="#" class="module-link">Syllabus PDF</a></li>
-          </ul>
-        </div>
+      <div class="modules-container">
+        <details class="module-card" open>
+          <summary class="module-title">
+            <span>Module 1: Introduction to Data Structures</span>
+            <i class="fa-solid fa-chevron-up"></i>
+          </summary>
+          <div class="module-content">
+            <a href="#" class="material-link">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>Module 1 Notes PDF</span>
+            </a>
+            <a href="#" class="material-link">
+              <i class="fa-solid fa-link"></i>
+              <span>Reference Link: Video Lecture</span>
+            </a>
+            <a href="#" class="material-link">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>Syllabus PDF</span>
+            </a>
+          </div>
+        </details>
 
-        <div class="module-card">
-          <h3 class="module-title">Module 2: Arrays and Strings</h3>
-        </div>
+        <details class="module-card">
+          <summary class="module-title">
+            <span>Module 2: Arrays and Strings</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </summary>
+          <div class="module-content">
+            <a href="#" class="material-link">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>Module 2 Notes PDF</span>
+            </a>
+            <a href="#" class="material-link">
+              <i class="fa-solid fa-link"></i>
+              <span>Practice Questions</span>
+            </a>
+          </div>
+        </details>
 
-        <div class="module-card">
-          <h3 class="module-title">Module 3: Linked Lists</h3>
-        </div>
+        <details class="module-card">
+          <summary class="module-title">
+            <span>Module 3: Linked Lists</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </summary>
+          <div class="module-content">
+            <a href="#" class="material-link">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>Module 3 Notes PDF</span>
+            </a>
+          </div>
+        </details>
 
-        <div class="module-card">
-          <h3 class="module-title">Module 4: Stacks and Queues</h3>
-        </div>
+        <details class="module-card">
+          <summary class="module-title">
+            <span>Module 4: Stacks and Queues</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </summary>
+          <div class="module-content">
+            <a href="#" class="material-link">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>Module 4 Notes PDF</span>
+            </a>
+          </div>
+        </details>
       </div>
     </div>
   </main>

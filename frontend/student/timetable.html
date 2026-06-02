@@ -37,14 +37,20 @@
 
     <!-- Academic Records -->
     <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
-      <h2 class="section-title mb-4">Academic Records - Timetable</h2>
+      <div class="card-header mb-4">
+        <h2 class="section-title">Academic Records - Timetable</h2>
+        <select class="semester-select">
+          <option>Semester 5</option>
+          <option>Semester 6</option>
+        </select>
+      </div>
 
       <!-- Tab Navigation -->
-      <div class="flex gap-4 mb-6 text-sm font-medium text-slate-600">
-        <span class="tab-inactive">Attendance</span>
-        <span class="tab-inactive">Internal Marks</span>
+      <div class="flex gap-4 mb-6 text-sm font-medium text-slate-600 flex-wrap">
+        <a href="attendance.html" class="tab-inactive">Attendance</a>
+        <a href="internal.html" class="tab-inactive">Internal Marks</a>
         <span class="tab-active">Timetable</span>
-        <span class="tab-inactive">Syllabus & Material</span>
+        <a href="syllabus.html" class="tab-inactive">Syllabus & Material</a>
       </div>
 
       <!-- Timetable Grid -->

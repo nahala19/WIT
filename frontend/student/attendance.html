@@ -37,14 +37,20 @@
 
     <!-- Academic Records -->
     <div class="bg-white rounded-2xl p-4 card-shadow h-[calc(100vh-7rem)] overflow-hidden">
-      <h2 class="section-title mb-3">Academic Records - Attendance</h2>
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="section-title">Academic Records - Attendance</h2>
+        <select class="semester-select">
+          <option>Semester 5</option>
+          <option>Semester 6</option>
+        </select>
+      </div>
 
       <!-- Tab Navigation -->
-      <div class="flex gap-2 mb-4">
+      <div class="flex flex-wrap gap-2 mb-4">
         <span class="tab-active">Attendance</span>
-        <span class="tab-inactive">Internal Marks</span>
-        <span class="tab-inactive">Timetable</span>
-        <span class="tab-inactive">Syllabus & Material</span>
+        <a href="internal.html" class="tab-inactive">Internal Marks</a>
+        <a href="timetable.html" class="tab-inactive">Timetable</a>
+        <a href="syllabus.html" class="tab-inactive">Syllabus & Material</a>
       </div>
 
       <!-- Attendance Table -->
