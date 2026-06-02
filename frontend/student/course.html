@@ -30,15 +30,15 @@
 
   <!-- Main Content -->
   <main class="flex-1 p-4 overflow-hidden">
-    <!-- Header -->
-    <header class="flex justify-between items-center mb-4">
-      <div></div>
-    </header>
-
     <!-- Course Selection Panel -->
     <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
-      <h2 class="section-title mb-4">Course Selection</h2>
-      <p class="text-sm text-slate-600 mb-6">Bachelor of Technology in Computer Science & Engineering — Semester 5</p>
+      <div class="card-header mb-4">
+        <h2 class="section-title m-0">Course Selection</h2>
+        <select class="semester-select">
+          <option>Semester 5</option>
+          <option>Semester 6</option>
+        </select>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
