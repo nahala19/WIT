@@ -36,18 +36,18 @@ body {
     0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
-.section-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 0.5rem;
-}
-
 .card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
 }
 
 .semester-select {
@@ -64,6 +64,40 @@ body {
 .semester-select:focus {
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.academic-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: white;
+}
+
+.academic-table thead {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+}
+
+.academic-table th,
+.academic-table td {
+  padding: 0.75rem 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.academic-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.attendance-table td:nth-child(1),
+.attendance-table td:nth-child(3),
+.attendance-table td:nth-child(4),
+.attendance-table td:nth-child(5),
+.attendance-table td:nth-child(6) {
+  white-space: nowrap;
 }
 
 .tab-active {

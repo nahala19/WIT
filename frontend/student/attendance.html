@@ -18,7 +18,7 @@
     </div>
     <nav class="flex-1 space-y-1">
       <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-      <a href="internal.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
+      <a href="task.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
       <a href="course.html" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
       <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
       <a href="attendance.html" class="nav-item active-nav"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
@@ -36,8 +36,8 @@
     </header>
 
     <!-- Academic Records -->
-    <div class="bg-white rounded-2xl p-4 card-shadow h-[calc(100vh-7rem)] overflow-hidden">
-      <div class="flex items-center justify-between mb-3">
+    <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
+      <div class="card-header mb-4">
         <h2 class="section-title">Academic Records - Attendance</h2>
         <select class="semester-select">
           <option>Semester 5</option>
@@ -46,7 +46,7 @@
       </div>
 
       <!-- Tab Navigation -->
-      <div class="flex flex-wrap gap-2 mb-4">
+      <div class="flex flex-wrap gap-4 mb-6 text-sm font-medium text-slate-600">
         <span class="tab-active">Attendance</span>
         <a href="internal.html" class="tab-inactive">Internal Marks</a>
         <a href="timetable.html" class="tab-inactive">Timetable</a>
@@ -54,8 +54,8 @@
       </div>
 
       <!-- Attendance Table -->
-      <div class="overflow-hidden">
-        <table class="attendance-table">
+      <div class="overflow-x-auto">
+        <table class="academic-table attendance-table">
         <thead>
           <tr>
             <th>Subject Code</th>

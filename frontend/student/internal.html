@@ -18,10 +18,10 @@
     </div>
     <nav class="flex-1 space-y-1">
       <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-      <a href="internal.html" class="nav-item active-nav"><i class="fa-solid fa-list-check"></i> Task</a>
+      <a href="task.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
       <a href="course.html" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
       <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
-      <a href="attendance.html" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
+      <a href="attendance.html" class="nav-item active-nav"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
       <a href="notification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
       <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
     </nav>
@@ -54,47 +54,49 @@
       </div>
 
       <!-- Internal Marks Table -->
-      <table class="w-full text-sm text-left border border-slate-200">
-        <thead class="bg-slate-100 text-slate-600 font-semibold">
-          <tr>
-            <th class="px-3 py-2">Subject</th>
-            <th class="px-3 py-2">Assignment 1 (10)</th>
-            <th class="px-3 py-2">Mid-Term (50)</th>
-            <th class="px-3 py-2">Lab Record (20)</th>
-            <th class="px-3 py-2">Total Obtained</th>
-          </tr>
-        </thead>
-        <tbody class="text-slate-700">
-          <tr class="border-t">
-            <td class="px-3 py-2">Database Management (CS301)</td>
-            <td class="px-3 py-2">9.0</td>
-            <td class="px-3 py-2">45.0</td>
-            <td class="px-3 py-2">18.0</td>
-            <td class="px-3 py-2 font-semibold">72.0</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">Operating Systems (CS302)</td>
-            <td class="px-3 py-2">8.5</td>
-            <td class="px-3 py-2">40.0</td>
-            <td class="px-3 py-2">19.0</td>
-            <td class="px-3 py-2 font-semibold">67.5</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">Software Engineering (CS304)</td>
-            <td class="px-3 py-2">10.0</td>
-            <td class="px-3 py-2">48.0</td>
-            <td class="px-3 py-2">20.0</td>
-            <td class="px-3 py-2 font-semibold">78.0</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">Computer Networks (CS305)</td>
-            <td class="px-3 py-2">9.0</td>
-            <td class="px-3 py-2">42.0</td>
-            <td class="px-3 py-2">17.5</td>
-            <td class="px-3 py-2 font-semibold">68.5</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="overflow-x-auto">
+        <table class="academic-table internal-table">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Assignment 1 (10)</th>
+              <th>Mid-Term (50)</th>
+              <th>Lab Record (20)</th>
+              <th>Total Obtained</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Database Management (CS301)</td>
+              <td>9.0</td>
+              <td>45.0</td>
+              <td>18.0</td>
+              <td class="font-semibold">72.0</td>
+            </tr>
+            <tr>
+              <td>Operating Systems (CS302)</td>
+              <td>8.5</td>
+              <td>40.0</td>
+              <td>19.0</td>
+              <td class="font-semibold">67.5</td>
+            </tr>
+            <tr>
+              <td>Software Engineering (CS304)</td>
+              <td>10.0</td>
+              <td>48.0</td>
+              <td>20.0</td>
+              <td class="font-semibold">78.0</td>
+            </tr>
+            <tr>
+              <td>Computer Networks (CS305)</td>
+              <td>9.0</td>
+              <td>42.0</td>
+              <td>17.5</td>
+              <td class="font-semibold">68.5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </main>
   </body>
