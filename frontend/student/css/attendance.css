@@ -92,14 +92,6 @@ body {
   border-bottom: none;
 }
 
-.attendance-table td:nth-child(1),
-.attendance-table td:nth-child(3),
-.attendance-table td:nth-child(4),
-.attendance-table td:nth-child(5),
-.attendance-table td:nth-child(6) {
-  white-space: nowrap;
-}
-
 .tab-active {
   padding: 0.375rem 0.75rem;
   background-color: #3b82f6;
@@ -125,10 +117,9 @@ body {
 
 .attendance-table {
   width: 100%;
-  font-size: 0.875rem;
   text-align: left;
   border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   overflow: hidden;
 }
 
@@ -140,8 +131,8 @@ body {
 
 .attendance-table th,
 .attendance-table td {
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #f1f5f9;
+  padding: 0.75rem 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .attendance-table tbody tr:last-child td {
@@ -150,4 +141,12 @@ body {
 
 .attendance-table tbody {
   color: #334155;
+}
+
+.attendance-table td:nth-child(1),
+.attendance-table td:nth-child(3),
+.attendance-table td:nth-child(4),
+.attendance-table td:nth-child(5),
+.attendance-table td:nth-child(6) {
+  white-space: nowrap;
 }

@@ -75,6 +75,11 @@ body {
   border-radius: 0.75rem;
   overflow: hidden;
   background-color: white;
+.academic-table th,
+.academic-table td {
+  white-space: nowrap;
+}
+
   font-size: 0.875rem;
   text-align: left;
 }
@@ -92,12 +97,13 @@ body {
   vertical-align: middle;
 }
 
-.academic-table tbody tr:last-child td {
-  border-bottom: none;
+.academic-table th:first-child,
+.academic-table td:first-child {
+  white-space: nowrap;
 }
 
-.timetable-table td:first-child {
-  white-space: nowrap;
+.academic-table tbody tr:last-child td {
+  border-bottom: none;
 }
 
 /* Tabs */

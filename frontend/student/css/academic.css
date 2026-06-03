@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Shared academic page styles to enforce consistent visuals across pages */
+body { font-family: 'Inter', sans-serif; }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.semester-select {
+  min-width: 120px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: #334155;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.semester-select:focus { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.18); }
+
+/* Table baseline */
+.academic-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: white;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.academic-table thead { background-color: #f8fafc; color: #475569; font-weight: 600; }
+
+.academic-table th,
+.academic-table td {
+  padding: 0.75rem 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.academic-table tbody tr:last-child td { border-bottom: none; }
+
+.academic-table th:first-child,
+.academic-table td:first-child { white-space: nowrap; }
+
+/* Tabs */
+.tab-active { padding: 0.5rem 1rem; background-color: #3b82f6; color: white; border-radius: 0.5rem; cursor: default; }
+.tab-inactive { padding: 0.5rem 1rem; background-color: #e2e8f0; color: #475569; border-radius: 0.5rem; cursor: pointer; }
+
+/* Make sure per-page table utilities are overridden */
+table th, table td { padding: 0.75rem 0.875rem; }
+
+/* Small utility to ensure consistent card look */
+.card-shadow { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); }
