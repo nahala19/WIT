@@ -28,6 +28,64 @@ body { font-family: 'Inter', sans-serif; }
   outline: none;
 }
 
+/* Precise, high-specificity rules to guarantee identical header and dropdown across pages */
+.bg-white .card-header .section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0; /* remove extra per-page margins */
+}
+
+.bg-white .card-header .semester-select {
+  min-width: 140px;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: #334155;
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
+
+/* Make timetable dropdown match attendance dropdown exactly */
+.bg-white .card-header .attendance-like {
+  min-width: 120px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: #334155;
+  font-size: 0.875rem;
+  outline: none;
+}
+/* Force exact width/display to override generic select rules */
+.bg-white .card-header .attendance-like {
+  width: auto !important;
+  display: inline-block !important;
+  line-height: 1.2 !important;
+}
+
+/* Tight alignment and consistent vertical rhythm for header + select */
+.bg-white .card-header {
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem; /* consistent spacing below header */
+}
+
+.bg-white .card-header .section-title {
+  margin: 0;
+  line-height: 1.2;
+  display: block;
+}
+
+.bg-white .card-header .semester-select,
+.bg-white .card-header .attendance-like {
+  margin: 0;
+  vertical-align: middle;
+}
+
 .semester-select:focus { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.18); }
 
 /* Table baseline */
@@ -51,6 +109,23 @@ body { font-family: 'Inter', sans-serif; }
   vertical-align: middle;
 }
 
+/* Stronger, page-scope selectors to override per-page generic table rules */
+.bg-white .academic-table thead { background-color: #f8fafc; color: #475569; }
+.bg-white .academic-table th,
+.bg-white .academic-table td {
+  padding: 0.75rem 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+  color: #334155;
+  font-size: 0.875rem;
+}
+
+/* Ensure first column keeps nowrap and font weight like internal page */
+.bg-white .academic-table th:first-child,
+.bg-white .academic-table td:first-child {
+  white-space: nowrap;
+}
+
 .academic-table tbody tr:last-child td { border-bottom: none; }
 
 .academic-table th:first-child,
@@ -65,3 +140,6 @@ table th, table td { padding: 0.75rem 0.875rem; }
 
 /* Small utility to ensure consistent card look */
 .card-shadow { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); }
+
+/* Force timetable-specific utility removals: neutralize generic th/td rules from per-page files */
+.timetable-table th, .timetable-table td { padding: inherit; }
