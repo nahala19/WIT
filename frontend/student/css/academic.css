@@ -100,7 +100,7 @@ body { font-family: 'Inter', sans-serif; }
   text-align: left;
 }
 
-.academic-table thead { background-color: #f8fafc; color: #475569; font-weight: 600; }
+.academic-table thead { background-color: #f8fafc !important; color: #475569 !important; font-weight: 600 !important; }
 
 .academic-table th,
 .academic-table td {
@@ -110,7 +110,10 @@ body { font-family: 'Inter', sans-serif; }
 }
 
 /* Stronger, page-scope selectors to override per-page generic table rules */
-.bg-white .academic-table thead { background-color: #f8fafc; color: #475569; }
+.bg-white .academic-table thead { background-color: #f8fafc !important; color: #475569 !important; }
+
+/* Ensure table header text color/weight is consistent across pages */
+.academic-table th { color: #475569 !important; font-weight: 600 !important; }
 .bg-white .academic-table th,
 .bg-white .academic-table td {
   padding: 0.75rem 0.875rem;
