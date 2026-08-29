@@ -445,8 +445,58 @@ body {
   display: block;
 }
 
+.form-alert.is-success {
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+.signup-card {
+  max-width: 28rem;
+}
+
+.form-row--terms {
+  margin-bottom: 0.5rem;
+}
+
+.form-row--terms .checkbox-label {
+  align-items: flex-start;
+  line-height: 1.45;
+}
+
+.inline-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  text-decoration: underline;
+}
+
+.terms-error {
+  margin-bottom: 1rem;
+}
+
+.auth-switch {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.auth-switch a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
 .login-footer {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-align: center;
   font-size: 0.8125rem;
   color: var(--text-muted);

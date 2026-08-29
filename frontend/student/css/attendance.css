@@ -66,6 +66,17 @@ body {
   background-color: #cbd5e1;
 }
 
+a.tab-active,
+a.tab-inactive {
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.academic-tabs {
+  flex-wrap: wrap;
+}
+
 .attendance-table {
   width: 100%;
   font-size: 0.875rem;

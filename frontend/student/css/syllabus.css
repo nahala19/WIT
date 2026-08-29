@@ -58,6 +58,21 @@ body {
   cursor: pointer;
 }
 
+a.tab-active,
+a.tab-inactive {
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+a.tab-inactive:hover {
+  background-color: #cbd5e1;
+}
+
+.academic-tabs {
+  flex-wrap: wrap;
+}
+
 /* Module Cards */
 .module-card {
   padding: 1rem;

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up — Learning Hub LMS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+  <div class="login-page">
+    <aside class="login-hero" aria-hidden="true">
+      <div class="hero-content">
+        <div class="hero-brand">
+          <div class="hero-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span class="hero-brand-name">Learning Hub</span>
+        </div>
+        <h2 class="hero-title">Join your campus learning hub</h2>
+        <p class="hero-desc">
+          Create an account to access courses, submit assignments, track grades, and stay connected with your college.
+        </p>
+        <ul class="hero-features">
+          <li><i class="fa-solid fa-user-plus"></i> One account for all campus services</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Secure sign-in for students &amp; faculty</li>
+          <li><i class="fa-solid fa-bell"></i> Instant alerts and announcements</li>
+          <li><i class="fa-solid fa-chart-line"></i> Track academic progress in real time</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="login-main">
+      <div class="login-card signup-card">
+        <div class="mobile-brand">
+          <div class="mobile-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span class="mobile-brand-name">Learning Hub</span>
+        </div>
+
+        <div class="login-heading">
+          <h1>Create account</h1>
+          <p>Sign up to get started with Learning Hub</p>
+        </div>
+
+        <div id="form-alert" class="form-alert" role="alert"></div>
+
+        <div class="role-tabs" role="tablist" aria-label="Account type">
+          <button type="button" class="role-tab is-active" data-role="student" role="tab" aria-selected="true">
+            <i class="fa-solid fa-user-graduate"></i>
+            Student
+          </button>
+          <button type="button" class="role-tab" data-role="faculty" role="tab" aria-selected="false">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Faculty
+          </button>
+          <button type="button" class="role-tab" data-role="admin" role="tab" aria-selected="false">
+            <i class="fa-solid fa-user-shield"></i>
+            Admin
+          </button>
+        </div>
+
+        <form id="signup-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="full-name">Full name</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-user field-icon" aria-hidden="true"></i>
+              <input
+                type="text"
+                id="full-name"
+                name="fullName"
+                class="form-input"
+                placeholder="e.g. Emily Johnson"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <p id="full-name-error" class="field-error">Please enter your full name.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="user-id">Student / Employee ID</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-id-card field-icon" aria-hidden="true"></i>
+              <input
+                type="text"
+                id="user-id"
+                name="userId"
+                class="form-input"
+                placeholder="e.g. STU2024001"
+                autocomplete="username"
+                required
+              />
+            </div>
+            <p id="user-id-error" class="field-error">Please enter your ID.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email address</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-envelope field-icon" aria-hidden="true"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="you@university.edu"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <p id="email-error" class="field-error">Please enter a valid email address.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-lock field-icon" aria-hidden="true"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-input"
+                placeholder="At least 6 characters"
+                autocomplete="new-password"
+                required
+                minlength="6"
+              />
+              <button type="button" class="toggle-password" id="toggle-password" aria-label="Show password">
+                <i class="fa-solid fa-eye" id="toggle-password-icon"></i>
+              </button>
+            </div>
+            <p id="password-error" class="field-error">Password must be at least 6 characters.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="confirm-password">Confirm password</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-lock field-icon" aria-hidden="true"></i>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirmPassword"
+                class="form-input"
+                placeholder="Re-enter your password"
+                autocomplete="new-password"
+                required
+                minlength="6"
+              />
+              <button type="button" class="toggle-password" id="toggle-confirm" aria-label="Show confirm password">
+                <i class="fa-solid fa-eye" id="toggle-confirm-icon"></i>
+              </button>
+            </div>
+            <p id="confirm-password-error" class="field-error">Passwords do not match.</p>
+          </div>
+
+          <div class="form-row form-row--terms">
+            <label class="checkbox-label">
+              <input type="checkbox" name="terms" id="terms" required />
+              I agree to the <a href="#" class="inline-link">Terms of Service</a> and <a href="#" class="inline-link">Privacy Policy</a>
+            </label>
+          </div>
+          <p id="terms-error" class="field-error terms-error">You must accept the terms to continue.</p>
+
+          <button type="submit" class="btn-login" id="submit-btn">
+            <span>Create account</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <p class="auth-switch">
+          Already have an account? <a href="login.html">Sign in</a>
+        </p>
+
+        <p class="login-footer">
+          Need help? <a href="#">Contact IT support</a>
+        </p>
+      </div>
+
+      <p class="login-copyright">&copy; 2026 Learning Hub LMS. All rights reserved.</p>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById('signup-form');
+      var fullNameInput = document.getElementById('full-name');
+      var userIdInput = document.getElementById('user-id');
+      var emailInput = document.getElementById('email');
+      var passwordInput = document.getElementById('password');
+      var confirmInput = document.getElementById('confirm-password');
+      var termsInput = document.getElementById('terms');
+      var formAlert = document.getElementById('form-alert');
+      var submitBtn = document.getElementById('submit-btn');
+      var roleTabs = document.querySelectorAll('.role-tab');
+      var selectedRole = 'student';
+
+      var errors = {
+        fullName: document.getElementById('full-name-error'),
+        userId: document.getElementById('user-id-error'),
+        email: document.getElementById('email-error'),
+        password: document.getElementById('password-error'),
+        confirm: document.getElementById('confirm-password-error'),
+        terms: document.getElementById('terms-error')
+      };
+
+      roleTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          selectedRole = tab.getAttribute('data-role');
+          roleTabs.forEach(function (t) {
+            var active = t === tab;
+            t.classList.toggle('is-active', active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          hideAlert();
+        });
+      });
+
+      function bindToggle(btnId, inputId, iconId) {
+        var btn = document.getElementById(btnId);
+        var input = document.getElementById(inputId);
+        var icon = document.getElementById(iconId);
+        if (!btn || !input) return;
+        btn.addEventListener('click', function () {
+          var show = input.type === 'password';
+          input.type = show ? 'text' : 'password';
+          icon.className = show ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+          btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+        });
+      }
+
+      bindToggle('toggle-password', 'password', 'toggle-password-icon');
+      bindToggle('toggle-confirm', 'confirm-password', 'toggle-confirm-icon');
+
+      function hideAlert() {
+        formAlert.classList.remove('is-visible');
+        formAlert.textContent = '';
+      }
+
+      function setFieldError(input, errorEl, message, show) {
+        if (input) input.classList.toggle('is-error', show);
+        if (errorEl) {
+          errorEl.textContent = message || errorEl.textContent;
+          errorEl.classList.toggle('is-visible', show);
+        }
+      }
+
+      function isValidEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      }
+
+      function validate() {
+        var valid = true;
+        var fullName = fullNameInput.value.trim();
+        var userId = userIdInput.value.trim();
+        var email = emailInput.value.trim();
+        var password = passwordInput.value;
+        var confirm = confirmInput.value;
+
+        setFieldError(fullNameInput, errors.fullName, 'Please enter your full name.', !fullName);
+        if (!fullName) valid = false;
+
+        setFieldError(userIdInput, errors.userId, 'Please enter your ID.', !userId);
+        if (!userId) valid = false;
+
+        if (!email || !isValidEmail(email)) {
+          setFieldError(emailInput, errors.email, 'Please enter a valid email address.', true);
+          valid = false;
+        } else {
+          setFieldError(emailInput, errors.email, '', false);
+        }
+
+        if (!password || password.length < 6) {
+          setFieldError(passwordInput, errors.password, 'Password must be at least 6 characters.', true);
+          valid = false;
+        } else {
+          setFieldError(passwordInput, errors.password, '', false);
+        }
+
+        if (password !== confirm) {
+          setFieldError(confirmInput, errors.confirm, 'Passwords do not match.', true);
+          valid = false;
+        } else {
+          setFieldError(confirmInput, errors.confirm, '', false);
+        }
+
+        errors.terms.classList.toggle('is-visible', !termsInput.checked);
+        if (!termsInput.checked) valid = false;
+
+        return valid;
+      }
+
+      [fullNameInput, userIdInput, emailInput, passwordInput, confirmInput].forEach(function (input) {
+        input.addEventListener('input', function () {
+          input.classList.remove('is-error');
+          hideAlert();
+        });
+      });
+
+      termsInput.addEventListener('change', function () {
+        errors.terms.classList.remove('is-visible');
+        hideAlert();
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideAlert();
+        if (!validate()) return;
+
+        submitBtn.disabled = true;
+        submitBtn.querySelector('span').textContent = 'Creating account…';
+
+        setTimeout(function () {
+          try {
+            localStorage.setItem('lms_signup', JSON.stringify({
+              role: selectedRole,
+              fullName: fullNameInput.value.trim(),
+              userId: userIdInput.value.trim(),
+              email: emailInput.value.trim()
+            }));
+          } catch (err) { /* ignore */ }
+          window.location.href = 'login.html?registered=1';
+        }, 700);
+      });
+
+      var params = new URLSearchParams(window.location.search);
+      var role = params.get('role');
+      if (role) {
+        roleTabs.forEach(function (tab) {
+          if (tab.getAttribute('data-role') === role) tab.click();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign in — Learning Hub LMS</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="/frontend/css/login.css" />
+  <link rel="stylesheet" href="css/login.css" />
 </head>
 <body>
   <div class="login-page">
@@ -110,6 +110,10 @@
           </button>
         </form>
 
+        <p class="auth-switch">
+          Don't have an account? <a href="signup.html">Sign up</a>
+        </p>
+
         <p class="login-footer">
           Need help? <a href="#">Contact IT support</a>
         </p>
@@ -135,10 +139,10 @@
       var selectedRole = 'student';
 
       var redirects = {
-        student: '/frontend/student/dashboard.html',
-        faculty: '/frontend/teacher/hod/dashboard.html',
-        hod: '/frontend/teacher/hod/dashboard.html?role=hod',
-        admin: '/frontend/student/dashboard.html'
+        student: 'student/dashboard.html',
+        faculty: 'teacher/hod/dashboard.html',
+        hod: 'teacher/hod/dashboard.html?role=hod',
+        admin: 'student/dashboard.html'
       };
 
       roleTabs.forEach(function (tab) {
@@ -234,6 +238,12 @@
           document.getElementById('remember').checked = true;
         }
       } catch (err) { /* ignore */ }
+
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('registered') === '1') {
+        formAlert.textContent = 'Account created successfully. Please sign in.';
+        formAlert.classList.add('is-visible', 'is-success');
+      }
     })();
   </script>
 </body>

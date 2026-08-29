@@ -6,7 +6,7 @@
   <title>Academic Records - Internal Marks</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="/frontend/student/css/internal.css"/>
+  <link rel="stylesheet" href="css/internal.css"/>
 </head>
 <body class="flex min-h-screen">
 
@@ -45,13 +45,12 @@
     <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
       <h2 class="section-title mb-4">Academic Records - Internal Marks</h2>
 
-      <!-- Tab Navigation -->
-      <div class="flex gap-4 mb-6 text-sm font-medium text-slate-600">
-        <span class="tab-inactive">Attendance</span>
-        <span class="tab-active">Internal Marks</span>
-        <span class="tab-inactive">Timetable</span>
-        <span class="tab-inactive">Syllabus & Material</span>
-      </div>
+      <nav class="academic-tabs flex gap-4 mb-6 text-sm font-medium text-slate-600" aria-label="Academic records">
+        <a href="attendance.html" class="tab-inactive">Attendance</a>
+        <a href="internal.html" class="tab-active" aria-current="page">Internal Marks</a>
+        <a href="timetable.html" class="tab-inactive">Timetable</a>
+        <a href="syllabus.html" class="tab-inactive">Syllabus &amp; Material</a>
+      </nav>
 
       <!-- Internal Marks Table -->
       <table class="w-full text-sm text-left border border-slate-200">

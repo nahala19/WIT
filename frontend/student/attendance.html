@@ -6,7 +6,7 @@
   <title>Academic Records - Attendance</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="/frontend/student/css/attendance.css"/>
+  <link rel="stylesheet" href="css/attendance.css"/>
 </head>
 <body class="flex min-h-screen">
 
@@ -53,13 +53,12 @@
     <div class="bg-white rounded-2xl p-4 card-shadow h-[calc(100vh-7rem)] overflow-hidden">
       <h2 class="section-title mb-3">Academic Records - Attendance</h2>
 
-      <!-- Tab Navigation -->
-      <div class="flex gap-2 mb-4">
-        <span class="tab-active">Attendance</span>
-        <span class="tab-inactive">Internal Marks</span>
-        <span class="tab-inactive">Timetable</span>
-        <span class="tab-inactive">Syllabus & Material</span>
-      </div>
+      <nav class="academic-tabs flex gap-2 mb-4" aria-label="Academic records">
+        <a href="attendance.html" class="tab-active" aria-current="page">Attendance</a>
+        <a href="internal.html" class="tab-inactive">Internal Marks</a>
+        <a href="timetable.html" class="tab-inactive">Timetable</a>
+        <a href="syllabus.html" class="tab-inactive">Syllabus &amp; Material</a>
+      </nav>
 
       <!-- Attendance Table -->
       <div class="overflow-hidden">

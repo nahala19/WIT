@@ -1,190 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Learning Hub Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="/frontend/student/css/dashboard.css"/>
-</head>
-<body>
-  <div class="app-layout">
-    <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <aside id="sidebar" class="sidebar" aria-label="Main navigation">
+  <title>Learning Hub Dashboard</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Global Theme -->
+  <link rel="stylesheet" href="../css/global_theme.css" />
+
+  <!-- Dashboard-specific CSS -->
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+
+<body>
+
+  <div class="app-layout">
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay"
+         class="sidebar-overlay"
+         aria-hidden="true">
+    </div>
+
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+           class="sidebar"
+           aria-label="Main navigation">
+
+      <!-- Logo / Brand -->
       <div class="sidebar-brand">
-        <div class="sidebar-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+
+        <div class="sidebar-brand-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
         <span>Learning Hub</span>
+
       </div>
+
+
+      <!-- Navigation -->
       <nav class="sidebar-nav">
-        <a href="dashboard.html" class="nav-item active-nav"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-        <a href="internal.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
-        <a href="course.html" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
-        <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
-        <a href="attendance.html" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
-        <a href="notification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
-        <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+
+        <a href="dashboard.html"
+           class="nav-item active-nav">
+
+<i class="fa-solid fa-house"></i>
+          Dashboard
+
+        </a>
+
+
+        <a href="task.html"
+           class="nav-item">
+
+          <i class="fa-solid fa-list-check"></i>
+          Task
+
+        </a>
+
+
+        <a href="course.html"
+           class="nav-item">
+
+          <i class="fa-solid fa-book"></i>
+          Course Selection
+
+        </a>
+
+
+        <a href="feedback.html"
+           class="nav-item">
+
+          <i class="fa-solid fa-comment-dots"></i>
+          Feedback & Grievance
+
+        </a>
+
+
+        <a href="attendance.html"
+           class="nav-item">
+
+          <i class="fa-solid fa-graduation-cap"></i>
+          Academic
+
+        </a>
+
+
+        <a href="notification.html"
+           class="nav-item">
+
+          <i class="fa-solid fa-bell"></i>
+          Notification
+
+        </a>
+
+
+        <a href="settings.html"
+           class="nav-item">
+
+          <i class="fa-solid fa-gear"></i>
+          Settings
+
+        </a>
+
       </nav>
-      <a href="/frontend/login.html" class="nav-item nav-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+
+
+      <!-- Sidebar Logout -->
+      <a href="../login.html"
+         class="nav-item nav-logout">
+
+        <i class="fas fa-sign-out-alt"></i>
+        Logout
+
+      </a>
+
     </aside>
 
+
+    <!-- Main Content -->
     <main class="main-content">
+
+
+      <!-- Common Header -->
       <header class="top-bar">
+
         <div class="top-bar-left">
-          <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+
+          <!-- Mobile Menu Button -->
+          <button type="button"
+                  id="menu-toggle"
+                  class="menu-toggle"
+                  aria-label="Open menu"
+                  aria-expanded="false"
+                  aria-controls="sidebar">
+
             <i class="fa-solid fa-bars"></i>
+
           </button>
+
+
+          <!-- Greeting -->
           <div class="greeting-block">
-            <img src="https://ui-avatars.com/api/?name=Emily+Johnson&background=3b82f6&color=fff" alt="" class="greeting-avatar"/>
+
+            <img
+              src="https://ui-avatars.com/api/?name=Emily+Johnson&background=3b82f6&color=fff"
+              alt=""
+              class="greeting-avatar"
+            />
+
             <div>
-              <h1 class="greeting-title">Good morning, Emily</h1>
-              <p class="greeting-date">Tuesday, December 30</p>
+
+              <h1 class="greeting-title">
+                Good morning, Emily
+              </h1>
+
+              <p class="greeting-date">
+                Tuesday, December 30
+              </p>
+
             </div>
+
           </div>
+
         </div>
+
+
+        <!-- User Profile -->
         <div class="user-pill">
+
           <div class="user-pill-info">
-            <p class="user-pill-name">Emily Johnson</p>
-            <span class="user-pill-role">Student</span>
+
+            <p class="user-pill-name">
+              Emily Johnson
+            </p>
+
+            <span class="user-pill-role">
+              Student
+            </span>
+
           </div>
-          <a href="/frontend/login.html" class="logout-btn" aria-label="Log out">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+
+          <!-- SAME LOGOUT ICON AS TASK PAGE -->
+          <a href="../login.html"
+             class="logout-btn"
+             aria-label="Log out">
+
+            <i class="fas fa-sign-out-alt"></i>
+
           </a>
+
         </div>
+
       </header>
 
+
+      <!-- Dashboard Content -->
       <div class="dashboard-panel">
+
+
+        <!-- Academic Snapshot -->
         <section>
+
           <div class="section-header">
-            <h2 class="section-title">Academic Snapshot</h2>
-            <span class="section-badge">Spring 2026</span>
+
+            <h2 class="section-title">
+              Academic Snapshot
+            </h2>
+
+            <span class="section-badge">
+              Spring 2026
+            </span>
+
           </div>
+
+
           <div class="snapshot-grid">
+
+
+            <!-- GPA -->
             <article class="snapshot-card">
+
               <div class="snapshot-card-header">
+
                 <div>
-                  <p class="card-label">Current GPA</p>
-                  <h3 class="card-value">3.85</h3>
+
+                  <p class="card-label">
+                    Current GPA
+                  </p>
+
+                  <h3 class="card-value">
+                    3.85
+                  </h3>
+
                 </div>
-                <div class="snapshot-icon"><i class="fa-solid fa-chart-line"></i></div>
+
+                <div class="snapshot-icon">
+
+                  <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
               </div>
-              <a href="#" class="card-link">View grade report <i class="fa-solid fa-arrow-right"></i></a>
+
+
+              <a href="#"
+                 class="card-link">
+
+                View grade report
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
             </article>
+
+
+            <!-- Registered Courses -->
             <article class="snapshot-card">
+
               <div class="snapshot-card-header">
+
                 <div>
-                  <p class="card-label">Registered Courses</p>
-                  <h3 class="card-value">5</h3>
+
+                  <p class="card-label">
+                    Registered Courses
+                  </p>
+
+                  <h3 class="card-value">
+                    5
+                  </h3>
+
                 </div>
-                <div class="snapshot-icon"><i class="fa-solid fa-book-open"></i></div>
+
+                <div class="snapshot-icon">
+
+                  <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
               </div>
-              <a href="course.html" class="card-link">Manage courses <i class="fa-solid fa-arrow-right"></i></a>
+
+
+              <a href="course.html"
+                 class="card-link">
+
+                Manage courses
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
             </article>
+
+
+            <!-- Pending Tasks -->
             <article class="snapshot-card">
+
               <div class="snapshot-card-header">
+
                 <div>
-                  <p class="card-label">Pending Tasks</p>
-                  <h3 class="card-value accent-warning">7</h3>
+
+                  <p class="card-label">
+                    Pending Tasks
+                  </p>
+
+                  <h3 class="card-value accent-warning">
+                    7
+                  </h3>
+
                 </div>
-                <div class="snapshot-icon warning"><i class="fa-solid fa-clock"></i></div>
+
+                <div class="snapshot-icon warning">
+
+                  <i class="fa-solid fa-clock"></i>
+
+                </div>
+
               </div>
-              <a href="internal.html" class="card-link">Go to tasks <i class="fa-solid fa-arrow-right"></i></a>
+
+
+              <!-- CHANGED TO task.html -->
+              <a href="task.html"
+                 class="card-link">
+
+                Go to tasks
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
             </article>
+
           </div>
+
         </section>
 
+
+        <!-- Quick Access -->
         <section>
+
           <div class="section-header">
-            <h2 class="section-title">Quick Access</h2>
-            <span class="section-badge">6 modules</span>
+
+            <h2 class="section-title">
+              Quick Access
+            </h2>
+
+            <span class="section-badge">
+              6 modules
+            </span>
+
           </div>
+
+
           <div class="quick-grid">
+
+
+            <!-- Tasks -->
             <article class="quick-access-card">
+
               <div class="quick-card-top">
-                <div class="quick-icon blue"><i class="fa-solid fa-list-check"></i></div>
-                <h4 class="card-title">Tasks & Submissions</h4>
+
+                <div class="quick-icon blue">
+
+                  <i class="fa-solid fa-list-check"></i>
+
+                </div>
+
+                <h4 class="card-title">
+                  Tasks & Submissions
+                </h4>
+
               </div>
-              <p class="card-desc">View assignments, deadlines, and submit completed work.</p>
-              <button type="button" class="card-btn" onclick="location.href='internal.html'">Go to Tasks</button>
+
+
+              <p class="card-desc">
+                View assignments, deadlines, and submit completed work.
+              </p>
+
+
+              <!-- CHANGED TO task.html -->
+              <button type="button"
+                      class="card-btn"
+                      onclick="location.href='task.html'">
+
+                Go to Tasks
+
+              </button>
+
             </article>
+
+
+            <!-- Course Selection -->
             <article class="quick-access-card">
+
               <div class="quick-card-top">
-                <div class="quick-icon violet"><i class="fa-solid fa-book"></i></div>
-                <h4 class="card-title">Course Selection</h4>
+
+                <div class="quick-icon violet">
+
+                  <i class="fa-solid fa-book"></i>
+
+                </div>
+
+                <h4 class="card-title">
+                  Course Selection
+                </h4>
+
               </div>
-              <p class="card-desc">Explore courses, manage registration, and plan your schedule.</p>
-              <button type="button" class="card-btn" onclick="location.href='course.html'">Go to Courses</button>
+
+
+              <p class="card-desc">
+                Explore courses, manage registration, and plan your schedule.
+              </p>
+
+
+              <button type="button"
+                      class="card-btn"
+                      onclick="location.href='course.html'">
+
+                Go to Courses
+
+              </button>
+
             </article>
+
+
+            <!-- Academic -->
             <article class="quick-access-card">
+
               <div class="quick-card-top">
-                <div class="quick-icon emerald"><i class="fa-solid fa-chart-pie"></i></div>
-                <h4 class="card-title">Academic Performance</h4>
+
+                <div class="quick-icon emerald">
+
+                  <i class="fa-solid fa-chart-pie"></i>
+
+                </div>
+
+                <h4 class="card-title">
+                  Academic Performance
+                </h4>
+
               </div>
-              <p class="card-desc">Monitor progress, grade reports, and track achievements.</p>
-              <button type="button" class="card-btn" onclick="location.href='attendance.html'">View Performance</button>
+
+
+              <p class="card-desc">
+                Monitor progress, grade reports, and track achievements.
+              </p>
+
+
+              <button type="button"
+                      class="card-btn"
+                      onclick="location.href='attendance.html'">
+
+                View Performance
+
+              </button>
+
             </article>
+
+
+            <!-- Notifications -->
             <article class="quick-access-card">
+
               <div class="quick-card-top">
-                <div class="quick-icon amber"><i class="fa-solid fa-bell"></i></div>
-                <h4 class="card-title">Notifications</h4>
+
+                <div class="quick-icon amber">
+
+                  <i class="fa-solid fa-bell"></i>
+
+                </div>
+
+                <h4 class="card-title">
+                  Notifications
+                </h4>
+
               </div>
-              <p class="card-desc">Announcements, alerts, and updates from your college.</p>
-              <button type="button" class="card-btn" onclick="location.href='notification.html'">View Notifications</button>
+
+
+              <p class="card-desc">
+                Announcements, alerts, and updates from your college.
+              </p>
+
+
+              <button type="button"
+                      class="card-btn"
+                      onclick="location.href='notification.html'">
+
+                View Notifications
+
+              </button>
+
             </article>
+
+
+            <!-- Feedback -->
             <article class="quick-access-card">
+
               <div class="quick-card-top">
-                <div class="quick-icon rose"><i class="fa-solid fa-comment-dots"></i></div>
-                <h4 class="card-title">Feedback & Grievance</h4>
+
+                <div class="quick-icon rose">
+
+                  <i class="fa-solid fa-comment-dots"></i>
+
+                </div>
+
+                <h4 class="card-title">
+                  Feedback & Grievance
+                </h4>
+
               </div>
-              <p class="card-desc">Submit feedback, suggestions, or report issues to administration.</p>
-              <button type="button" class="card-btn" onclick="location.href='feedback.html'">Open Feedback</button>
+
+
+              <p class="card-desc">
+                Submit feedback, suggestions, or report issues to administration.
+              </p>
+
+
+              <button type="button"
+                      class="card-btn"
+                      onclick="location.href='feedback.html'">
+
+                Open Feedback
+
+              </button>
+
             </article>
+
+
+            <!-- Settings -->
             <article class="quick-access-card">
+
               <div class="quick-card-top">
-                <div class="quick-icon slate"><i class="fa-solid fa-gear"></i></div>
-                <h4 class="card-title">Settings</h4>
+
+                <div class="quick-icon slate">
+
+                  <i class="fa-solid fa-gear"></i>
+
+                </div>
+
+                <h4 class="card-title">
+                  Settings
+                </h4>
+
               </div>
-              <p class="card-desc">Manage your profile, privacy, and communication preferences.</p>
-              <button type="button" class="card-btn" onclick="location.href='settings.html'">Open Settings</button>
+
+
+              <p class="card-desc">
+                Manage your profile, privacy, and communication preferences.
+              </p>
+
+
+              <button type="button"
+                      class="card-btn"
+                      onclick="location.href='settings.html'">
+
+                Open Settings
+
+              </button>
+
             </article>
+
           </div>
+
         </section>
+
       </div>
+
     </main>
+
   </div>
 
+
+  <!-- Mobile Sidebar JavaScript -->
   <script>
+
     (function () {
+
       var sidebar = document.getElementById('sidebar');
       var overlay = document.getElementById('sidebar-overlay');
       var toggle = document.getElementById('menu-toggle');
 
+
       function setOpen(open) {
+
         sidebar.classList.toggle('is-open', open);
+
         overlay.classList.toggle('is-visible', open);
-        overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-        document.body.style.overflow = open ? 'hidden' : '';
+
+        overlay.setAttribute(
+          'aria-hidden',
+          open ? 'false' : 'true'
+        );
+
+        toggle.setAttribute(
+          'aria-expanded',
+          open ? 'true' : 'false'
+        );
+
+        toggle.setAttribute(
+          'aria-label',
+          open ? 'Close menu' : 'Open menu'
+        );
+
+        document.body.style.overflow =
+          open ? 'hidden' : '';
+
       }
 
+
       toggle.addEventListener('click', function () {
-        setOpen(!sidebar.classList.contains('is-open'));
+
+        setOpen(
+          !sidebar.classList.contains('is-open')
+        );
+
       });
 
-      overlay.addEventListener('click', function () { setOpen(false); });
 
-      sidebar.querySelectorAll('.nav-item').forEach(function (link) {
-        link.addEventListener('click', function () {
-          if (window.innerWidth <= 768) setOpen(false);
+      overlay.addEventListener('click', function () {
+
+        setOpen(false);
+
+      });
+
+
+      sidebar
+        .querySelectorAll('.nav-item')
+        .forEach(function (link) {
+
+          link.addEventListener('click', function () {
+
+            if (window.innerWidth <= 768) {
+
+              setOpen(false);
+
+            }
+
+          });
+
         });
-      });
+
 
       window.addEventListener('resize', function () {
-        if (window.innerWidth > 768) setOpen(false);
+
+        if (window.innerWidth > 768) {
+
+          setOpen(false);
+
+        }
+
       });
+
     })();
+
   </script>
+
 </body>
 </html>
