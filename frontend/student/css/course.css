@@ -1,43 +1,368 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* =========================================
+   COURSE SELECTION PAGE
+   Only Course Selection content
+   Global sidebar/header stay in global_theme.css
+   ========================================= */
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f3f6f9;
-  overflow: hidden;
-  height: 100vh;
+
+/* =========================================
+   MAIN COURSE PANEL
+   ========================================= */
+
+.course-panel {
+    flex: 1;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-md);
+
+    padding: clamp(1.5rem, 3vw, 2rem);
+
+    overflow-y: auto;
+
+    max-height: calc(100vh - 6.5rem);
 }
 
-.sidebar {
-  background-color: #2c3e50;
+
+/* =========================================
+   ACADEMIC PROGRAM HEADER
+   ========================================= */
+
+.course-heading {
+    margin-bottom: 1.5rem;
 }
 
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;
-  transition: color 0.3s ease;
+.course-eyebrow {
+    display: block;
+
+    font-size: 0.6875rem;
+    font-weight: 700;
+
+    color: var(--text-muted);
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 0.5rem;
 }
 
-.nav-item:hover {
-  color: white;
+.course-heading h1 {
+    margin: 0 0 0.35rem;
+
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    color: var(--text);
+
+    letter-spacing: -0.02em;
 }
 
-.active-nav {
-  background-color: #3b82f6;
-  color: white;
-  border-radius: 0.5rem;
+.course-heading p {
+    margin: 0;
+
+    font-size: 0.875rem;
+
+    line-height: 1.5;
+
+    color: var(--text-muted);
 }
 
-.card-shadow {
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.05),
-    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+/* =========================================
+   DIVIDER
+   ========================================= */
+
+.course-divider {
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--border);
+
+    margin: 1.25rem 0 1.5rem;
 }
 
-.section-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #1e293b;
+
+/* =========================================
+   COURSE GRID
+   ========================================= */
+
+.course-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 1.25rem;
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* =========================================
+   COURSE CARD
+   ========================================= */
+
+.course-card {
+    padding: 1rem;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    border-radius: 0.75rem;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+.course-card:hover {
+    border-color: #bfdbfe;
+
+    box-shadow: var(--shadow-sm);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   COURSE CARD TITLE
+   ========================================= */
+
+.course-card-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    margin-bottom: 0.75rem;
+
+    color: var(--text);
+
+    font-size: 0.8125rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   COURSE CODE BADGE
+   ========================================= */
+
+.course-code {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 2rem;
+
+    height: 1.5rem;
+
+    padding: 0 0.4rem;
+
+    border-radius: 0.35rem;
+
+    background: var(--accent-soft);
+
+    color: var(--accent);
+
+    font-size: 0.625rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================
+   SELECT BOX
+   ========================================= */
+
+.course-select {
+    width: 100%;
+
+    min-height: 2.5rem;
+
+    padding: 0.6rem 2.25rem 0.6rem 0.75rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: 0.625rem;
+
+    background: var(--surface);
+
+    color: var(--text-muted);
+
+    font-family: inherit;
+
+    font-size: 0.75rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    outline: none;
+
+    appearance: auto;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.course-select:hover {
+    border-color: #cbd5e1;
+}
+
+.course-select:focus {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+
+/* =========================================
+   DONE BUTTON AREA
+   ========================================= */
+
+.course-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   DONE BUTTON
+   ========================================= */
+
+.course-done-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    min-width: 7rem;
+
+    padding: 0.65rem 1.25rem;
+
+    border: none;
+
+    border-radius: 0.625rem;
+
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #2563eb
+    );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 0.8125rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(59, 130, 246, 0.22);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.course-done-btn i {
+    font-size: 0.875rem;
+}
+
+.course-done-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 16px rgba(59, 130, 246, 0.28);
+}
+
+.course-done-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .course-panel {
+        max-height: none;
+
+        overflow: visible;
+
+        padding: 1.25rem;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .course-panel {
+        padding: 1rem;
+    }
+
+    .course-heading h1 {
+        font-size: 1.25rem;
+    }
+
+    .course-heading p {
+        font-size: 0.8125rem;
+    }
+
+    .course-card {
+        padding: 0.875rem;
+    }
+
+    .course-actions {
+        justify-content: stretch;
+    }
+
+    .course-done-btn {
+        width: 100%;
+    }
 }

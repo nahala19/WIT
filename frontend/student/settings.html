@@ -1,102 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Settings - Learning Hub</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="css/settings.css"/>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - Learning Hub</title>
+
+
+    <!-- =====================================
+         FONT AWESOME
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================
+         GLOBAL THEME
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="../css/global_theme.css">
+
+
+    <!-- =====================================
+         SETTINGS CSS
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="css/settings.css">
+
 </head>
-<body class="flex min-h-screen">
 
-  <!-- Sidebar -->
-  <aside class="sidebar w-56 text-slate-300 flex flex-col p-3 space-y-3">
-    <div class="px-3 py-3 text-lg font-bold text-white flex items-center gap-2">
-      <div class="w-6 h-6 bg-white/20 rounded-md"></div>
-      Learning Hub
+
+<body>
+
+
+<div class="app-layout">
+
+
+    <!-- =====================================
+         SIDEBAR OVERLAY
+         ===================================== -->
+
+    <div id="sidebar-overlay"
+         class="sidebar-overlay"
+         aria-hidden="true">
     </div>
-    <nav class="flex-1 space-y-1">
-      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-      <a href="internal.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
-      <a href="course.html" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
-      <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
-      <a href="attendance.html" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
-      <a href="notification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
-      <a href="settings.html" class="nav-item active-nav"><i class="fa-solid fa-gear"></i> Settings</a>
-    </nav>
-    <a href="#" class="nav-item border-t border-slate-700 pt-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-  </aside>
 
-  <!-- Main Content -->
-  <main class="flex-1 p-4 overflow-hidden">
-    <!-- Header -->
-    <header class="flex justify-between items-center mb-4">
-      <div class="flex items-center gap-3">
-        <img src="https://ui-avatars.com/api/?name=Emily+Johnson&background=random" class="w-10 h-10 rounded-full border-2 border-white shadow-sm"/>
-        <div>
-          <h1 class="text-lg font-bold text-slate-800">Good Morning, Emily Johnson</h1>
-          <p class="text-xs text-slate-500">Tuesday, December 30</p>
+
+    <!-- =====================================
+         SIDEBAR
+         ===================================== -->
+
+    <aside id="sidebar"
+           class="sidebar"
+           aria-label="Main navigation">
+
+
+        <!-- =================================
+             LOGO / BRAND
+             ================================= -->
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+            <span>
+                Learning Hub
+            </span>
+
         </div>
-      </div>
-    </header>
 
-    <!-- Settings Panel -->
-    <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
-      <h2 class="section-title mb-4">Settings</h2>
-      <p class="text-sm text-slate-600 mb-6">Manage your profile information, notifications, and preferences below.</p>
 
-      <!-- Profile Info -->
-      <div class="mb-6">
-        <h3 class="text-sm font-semibold text-slate-700 mb-3">Profile Information</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input type="text" placeholder="Full Name" value="Emily Johnson" class="settings-input"/>
-          <input type="email" placeholder="Email Address" value="emily.johnson@university.edu" class="settings-input"/>
-          <input type="text" placeholder="Student ID" value="STU-2024-8892" class="settings-input"/>
-          <input type="tel" placeholder="Phone Number" value="+91 98765 43210" class="settings-input"/>
-        </div>
-      </div>
+        <!-- =================================
+             NAVIGATION
+             ================================= -->
 
-      <!-- Notifications -->
-      <div class="mb-6">
-        <h3 class="text-sm font-semibold text-slate-700 mb-3">Notifications</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <label class="flex items-center gap-2 text-sm text-slate-700">
-            <input type="checkbox" checked class="toggle-checkbox"/> Email Notifications
-          </label>
-          <label class="flex items-center gap-2 text-sm text-slate-700">
-            <input type="checkbox" class="toggle-checkbox"/> SMS Alerts
-          </label>
-          <label class="flex items-center gap-2 text-sm text-slate-700">
-            <input type="checkbox" checked class="toggle-checkbox"/> Academic Updates
-          </label>
-          <label class="flex items-center gap-2 text-sm text-slate-700">
-            <input type="checkbox" checked class="toggle-checkbox"/> Event Reminders
-          </label>
-        </div>
-      </div>
+        <nav class="sidebar-nav">
 
-      <!-- Preferences -->
-      <div class="mb-6">
-        <h3 class="text-sm font-semibold text-slate-700 mb-3">Preferences</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <select class="settings-input">
-            <option>English</option>
-            <option>Hindi</option>
-            <option>Malayalam</option>
-          </select>
-          <select class="settings-input">
-            <option>Default Light</option>
-            <option>Dark Mode</option>
-            <option>High Contrast</option>
-          </select>
-        </div>
-      </div>
 
-      <div class="text-right">
-        <button class="px-5 py-2 bg-blue-500 text-white text-sm font-semibold rounded-lg hover:bg-blue-600 transition">Save Changes</button>
-      </div>
-    </div>
-  </main>
+            <!-- Dashboard -->
+
+            <a href="dashboard.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- Task -->
+
+            <a href="task.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <span>
+                    Task
+                </span>
+
+            </a>
+
+
+            <!-- Course Selection -->
+
+            <a href="course.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-book"></i>
+
+                <span>
+                    Course Selection
+                </span>
+
+            </a>
+
+
+            <!-- Feedback -->
+
+            <a href="feedback.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-comment-dots"></i>
+
+                <span>
+                    Feedback &amp; Grievance
+                </span>
+
+            </a>
+
+
+            <!-- Academic -->
+
+            <a href="academic.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <span>
+                    Academic
+                </span>
+
+            </a>
+
+
+            <!-- Notification -->
+
+            <a href="notification.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <span>
+                    Notification
+                </span>
+
+            </a>
+
+
+            <!-- =================================
+                 SETTINGS ACTIVE
+                 ================================= -->
+
+            <a href="settings.html"
+               class="nav-item active-nav"
+               aria-current="page">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================
+             LOGOUT
+             ================================= -->
+
+        <a href="../login.html"
+           class="nav-item nav-logout">
+
+            <i class="fas fa-sign-out-alt"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </a>
+
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+         ===================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             HEADER
+             ================================= -->
+
+        <header class="top-bar">
+
+
+            <!-- LEFT -->
+
+            <div class="top-bar-left">
+
+
+                <!-- Mobile Menu -->
+
+                <button type="button"
+                        id="menu-toggle"
+                        class="menu-toggle"
+                        aria-label="Open menu"
+                        aria-expanded="false"
+                        aria-controls="sidebar">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <!-- Greeting -->
+
+                <div class="greeting-block">
+
+
+                    <img
+                        src="https://ui-avatars.com/api/?name=Emily+Johnson&background=3b82f6&color=fff"
+                        alt="Emily Johnson"
+                        class="greeting-avatar"
+                    >
+
+
+                    <div>
+
+
+                        <h1 class="greeting-title">
+
+                            Good morning, Emily
+
+                        </h1>
+
+
+                        <p class="greeting-date">
+
+                            Tuesday, December 30
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 USER PROFILE
+                 ================================= -->
+
+            <div class="user-pill">
+
+
+                <div class="user-pill-info">
+
+
+                    <p class="user-pill-name">
+
+                        Emily Johnson
+
+                    </p>
+
+
+                    <span class="user-pill-role">
+
+                        STUDENT
+
+                    </span>
+
+
+                </div>
+
+
+                <a href="../login.html"
+                   class="logout-btn"
+                   aria-label="Log out">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =================================
+             SETTINGS CONTENT
+             ================================= -->
+
+        <section class="settings-panel">
+
+
+            <!-- =================================
+                 TITLE
+                 ================================= -->
+
+            <h2 class="settings-title">
+
+                Settings
+
+            </h2>
+
+
+            <!-- =================================
+                 DESCRIPTION
+                 ================================= -->
+
+            <p class="settings-description">
+
+                Manage your profile information, notifications, and preferences below.
+
+            </p>
+
+
+            <!-- =================================
+                 PROFILE INFORMATION
+                 ================================= -->
+
+            <div class="settings-section">
+
+
+                <h3 class="settings-section-title">
+
+                    Profile Information
+
+                </h3>
+
+
+                <div class="profile-grid">
+
+
+                    <input
+                        type="text"
+                        class="settings-input"
+                        value="Emily Johnson"
+                        aria-label="Full Name"
+                    >
+
+
+                    <input
+                        type="email"
+                        class="settings-input"
+                        value="emily.johnson@university.edu"
+                        aria-label="Email Address"
+                    >
+
+
+                    <input
+                        type="text"
+                        class="settings-input"
+                        value="STU-2024-8892"
+                        aria-label="Student ID"
+                    >
+
+
+                    <input
+                        type="tel"
+                        class="settings-input"
+                        value="+91 98765 43210"
+                        aria-label="Phone Number"
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 NOTIFICATIONS
+                 ================================= -->
+
+            <div class="settings-section">
+
+
+                <h3 class="settings-section-title">
+
+                    Notifications
+
+                </h3>
+
+
+                <div class="notification-settings-grid">
+
+
+                    <!-- Email Notifications -->
+
+                    <label class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            class="toggle-checkbox"
+                            checked
+                        >
+
+                        <span>
+                            Email Notifications
+                        </span>
+
+                    </label>
+
+
+                    <!-- SMS Alerts -->
+
+                    <label class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            class="toggle-checkbox"
+                        >
+
+                        <span>
+                            SMS Alerts
+                        </span>
+
+                    </label>
+
+
+                    <!-- Academic Updates -->
+
+                    <label class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            class="toggle-checkbox"
+                            checked
+                        >
+
+                        <span>
+                            Academic Updates
+                        </span>
+
+                    </label>
+
+
+                    <!-- Event Reminders -->
+
+                    <label class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            class="toggle-checkbox"
+                            checked
+                        >
+
+                        <span>
+                            Event Reminders
+                        </span>
+
+                    </label>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 PREFERENCES
+                 ================================= -->
+
+            <div class="settings-section">
+
+
+                <h3 class="settings-section-title">
+
+                    Preferences
+
+                </h3>
+
+
+                <div class="preferences-grid">
+
+
+                    <!-- Language -->
+
+                    <select class="settings-select"
+                            aria-label="Language">
+
+                        <option selected>
+                            English
+                        </option>
+
+                        <option>
+                            Malayalam
+                        </option>
+
+                        <option>
+                            Hindi
+                        </option>
+
+                    </select>
+
+
+                    <!-- Theme -->
+
+                    <select class="settings-select"
+                            aria-label="Theme">
+
+                        <option selected>
+                            Default Light
+                        </option>
+
+                        <option>
+                            Light
+                        </option>
+
+                        <option>
+                            Dark
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 SAVE BUTTON
+                 ================================= -->
+
+            <div class="settings-actions">
+
+
+                <button type="button"
+                        class="save-button">
+
+                    Save Changes
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- =====================================
+     GLOBAL JAVASCRIPT
+     ===================================== -->
+
+<script src="../js/global.js"></script>
+
+
 </body>
+
 </html>

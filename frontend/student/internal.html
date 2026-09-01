@@ -1,100 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Academic Records - Internal Marks</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="css/internal.css"/>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Records - Internal Marks</title>
+
+
+    <!-- =====================================
+         GLOBAL THEME
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="../css/global_theme.css">
+
+
+    <!-- =====================================
+         ICONS
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================
+         INTERNAL MARKS CSS
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="css/internal.css">
+
 </head>
-<body class="flex min-h-screen">
 
-  <!-- Sidebar -->
-  <aside class="sidebar w-56 text-slate-300 flex flex-col p-3 space-y-3">
-    <div class="px-3 py-3 text-lg font-bold text-white flex items-center gap-2">
-      <div class="w-6 h-6 bg-white/20 rounded-md"></div>
-      Learning Hub
-    </div>
-    <nav class="flex-1 space-y-1">
-      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-      <a href="internal.html" class="nav-item active-nav"><i class="fa-solid fa-list-check"></i> Task</a>
-      <a href="course.html" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
-      <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
-      <a href="attendance.html" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
-      <a href="notification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
-      <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
-    </nav>
-    <a href="#" class="nav-item border-t border-slate-700 pt-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-  </aside>
 
-  <!-- Main Content -->
-  <main class="flex-1 p-4 overflow-hidden">
-    <!-- Header -->
-    <header class="flex justify-between items-center mb-4">
-      <div class="flex items-center gap-3">
-        <img src="https://ui-avatars.com/api/?name=Arjun+PS&background=random" class="w-10 h-10 rounded-full border-2 border-white shadow-sm"/>
-        <div>
-          <h1 class="text-lg font-bold text-slate-800">Good Morning, Arjun PS</h1>
-          <p class="text-xs text-slate-500">Semester 5</p>
+<body>
+
+
+<div class="app-layout">
+
+
+    <!-- =====================================
+         SIDEBAR
+         ===================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Learning Hub -->
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+
+                <i class="fas fa-graduation-cap"></i>
+
+            </div>
+
+            Learning Hub
+
         </div>
-      </div>
-    </header>
 
-    <!-- Academic Records -->
-    <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
-      <h2 class="section-title mb-4">Academic Records - Internal Marks</h2>
 
-      <nav class="academic-tabs flex gap-4 mb-6 text-sm font-medium text-slate-600" aria-label="Academic records">
-        <a href="attendance.html" class="tab-inactive">Attendance</a>
-        <a href="internal.html" class="tab-active" aria-current="page">Internal Marks</a>
-        <a href="timetable.html" class="tab-inactive">Timetable</a>
-        <a href="syllabus.html" class="tab-inactive">Syllabus &amp; Material</a>
-      </nav>
+        <!-- Navigation -->
 
-      <!-- Internal Marks Table -->
-      <table class="w-full text-sm text-left border border-slate-200">
-        <thead class="bg-slate-100 text-slate-600 font-semibold">
-          <tr>
-            <th class="px-3 py-2">Subject</th>
-            <th class="px-3 py-2">Assignment 1 (10)</th>
-            <th class="px-3 py-2">Mid-Term (50)</th>
-            <th class="px-3 py-2">Lab Record (20)</th>
-            <th class="px-3 py-2">Total Obtained</th>
-          </tr>
-        </thead>
-        <tbody class="text-slate-700">
-          <tr class="border-t">
-            <td class="px-3 py-2">Database Management (CS301)</td>
-            <td class="px-3 py-2">9.0</td>
-            <td class="px-3 py-2">45.0</td>
-            <td class="px-3 py-2">18.0</td>
-            <td class="px-3 py-2 font-semibold">72.0</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">Operating Systems (CS302)</td>
-            <td class="px-3 py-2">8.5</td>
-            <td class="px-3 py-2">40.0</td>
-            <td class="px-3 py-2">19.0</td>
-            <td class="px-3 py-2 font-semibold">67.5</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">Software Engineering (CS304)</td>
-            <td class="px-3 py-2">10.0</td>
-            <td class="px-3 py-2">48.0</td>
-            <td class="px-3 py-2">20.0</td>
-            <td class="px-3 py-2 font-semibold">78.0</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">Computer Networks (CS305)</td>
-            <td class="px-3 py-2">9.0</td>
-            <td class="px-3 py-2">42.0</td>
-            <td class="px-3 py-2">17.5</td>
-            <td class="px-3 py-2 font-semibold">68.5</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
+        <nav class="sidebar-nav">
+
+
+            <!-- Dashboard -->
+
+            <a href="dashboard.html"
+               class="nav-item">
+
+                <i class="fas fa-home"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <!-- Task -->
+
+            <a href="task.html"
+               class="nav-item">
+
+                <i class="fas fa-tasks"></i>
+
+                <span>Task</span>
+
+            </a>
+
+
+            <!-- Course Selection -->
+
+            <a href="course.html"
+               class="nav-item">
+
+                <i class="fas fa-book"></i>
+
+                <span>Course Selection</span>
+
+            </a>
+
+
+            <!-- Feedback -->
+
+            <a href="feedback.html"
+               class="nav-item">
+
+                <i class="fas fa-comment-dots"></i>
+
+                <span>Feedback &amp; Grievance</span>
+
+            </a>
+
+
+            <!-- Academic ACTIVE -->
+
+            <a href="academic.html"
+               class="nav-item active-nav">
+
+                <i class="fas fa-graduation-cap"></i>
+
+                <span>Academic</span>
+
+            </a>
+
+
+            <!-- Notification -->
+
+            <a href="notification.html"
+               class="nav-item">
+
+                <i class="fas fa-bell"></i>
+
+                <span>Notification</span>
+
+            </a>
+
+
+            <!-- Settings -->
+
+            <a href="settings.html"
+               class="nav-item">
+
+                <i class="fas fa-cog"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- Logout -->
+
+        <div class="nav-logout">
+
+            <a href="../login.html"
+               class="nav-item">
+
+                <i class="fas fa-sign-out-alt"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- Mobile Overlay -->
+
+    <div class="sidebar-overlay"></div>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+         ===================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             GLOBAL HEADER
+             ================================= -->
+
+        <div class="top-bar">
+
+
+            <!-- LEFT -->
+
+            <div class="top-bar-left">
+
+
+                <!-- Hamburger -->
+
+                <button class="menu-toggle"
+                        id="menuToggle"
+                        type="button">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+
+                <!-- Greeting -->
+
+                <div class="greeting-block">
+
+
+                    <img
+                        src="https://ui-avatars.com/api/?name=Emily+Johnson&background=3b82f6&color=fff"
+                        alt="Emily Johnson"
+                        class="greeting-avatar"
+                    >
+
+
+                    <div>
+
+
+                        <h1 class="greeting-title">
+
+                            Good morning, Emily
+
+                        </h1>
+
+
+                        <p class="greeting-date">
+
+                            Tuesday, December 30
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 RIGHT USER PROFILE
+                 ================================= -->
+
+            <div class="user-pill">
+
+
+                <div class="user-pill-info">
+
+
+                    <p class="user-pill-name">
+
+                        Emily Johnson
+
+                    </p>
+
+
+                    <span class="user-pill-role">
+
+                        STUDENT
+
+                    </span>
+
+
+                </div>
+
+
+                <!-- Logout -->
+
+                <a href="../login.html"
+                   class="logout-btn"
+                   aria-label="Log out">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================
+             INTERNAL MARKS CONTENT
+             ================================= -->
+
+        <section class="academic-panel">
+
+
+            <!-- PAGE TITLE -->
+
+            <h2 class="academic-title">
+
+                Academic Records - Internal Marks
+
+            </h2>
+
+
+            <!-- =================================
+                 ACADEMIC TABS
+                 ================================= -->
+
+            <nav class="academic-tabs"
+                 aria-label="Academic records">
+
+
+                <!-- Attendance -->
+
+                <a href="academic.html"
+                   class="academic-tab">
+
+                    Attendance
+
+                </a>
+
+
+                <!-- Internal Marks ACTIVE -->
+
+                <a href="internal.html"
+                   class="academic-tab active"
+                   aria-current="page">
+
+                    Internal Marks
+
+                </a>
+
+
+                <!-- Timetable -->
+
+                <a href="timetable.html"
+                   class="academic-tab">
+
+                    Timetable
+
+                </a>
+
+
+                <!-- Syllabus -->
+
+                <a href="syllabus.html"
+                   class="academic-tab">
+
+                    Syllabus &amp; Material
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- =================================
+                 INTERNAL MARKS TABLE
+                 ================================= -->
+
+            <div class="internal-table-wrapper">
+
+
+                <table class="internal-table">
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Assignment 1 (10)
+                            </th>
+
+                            <th>
+                                Mid-Term (50)
+                            </th>
+
+                            <th>
+                                Lab Record (20)
+                            </th>
+
+                            <th>
+                                Total Obtained
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <!-- Database Management -->
+
+                        <tr>
+
+                            <td>
+                                Database Management (CS301)
+                            </td>
+
+                            <td>
+                                9.0
+                            </td>
+
+                            <td>
+                                45.0
+                            </td>
+
+                            <td>
+                                18.0
+                            </td>
+
+                            <td class="total-mark">
+                                72.0
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Operating Systems -->
+
+                        <tr>
+
+                            <td>
+                                Operating Systems (CS302)
+                            </td>
+
+                            <td>
+                                8.5
+                            </td>
+
+                            <td>
+                                40.0
+                            </td>
+
+                            <td>
+                                19.0
+                            </td>
+
+                            <td class="total-mark">
+                                67.5
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Software Engineering -->
+
+                        <tr>
+
+                            <td>
+                                Software Engineering (CS304)
+                            </td>
+
+                            <td>
+                                10.0
+                            </td>
+
+                            <td>
+                                48.0
+                            </td>
+
+                            <td>
+                                20.0
+                            </td>
+
+                            <td class="total-mark">
+                                78.0
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Computer Networks -->
+
+                        <tr>
+
+                            <td>
+                                Computer Networks (CS305)
+                            </td>
+
+                            <td>
+                                9.0
+                            </td>
+
+                            <td>
+                                42.0
+                            </td>
+
+                            <td>
+                                17.5
+                            </td>
+
+                            <td class="total-mark">
+                                68.5
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- =====================================
+     GLOBAL JAVASCRIPT
+     ===================================== -->
+
+<script src="../js/global.js"></script>
+
+
 </body>
+
 </html>

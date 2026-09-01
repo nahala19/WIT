@@ -1,74 +1,337 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* =========================================
+   INTERNAL MARKS PAGE
+   ========================================= */
+
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f3f6f9;
-  overflow: hidden;
-  height: 100vh;
+    font-family: 'Inter', sans-serif;
 }
 
-.sidebar {
-  background-color: #2c3e50;
+
+/* =========================================
+   MAIN ACADEMIC PANEL
+   ========================================= */
+
+.academic-panel {
+    width: 100%;
+    min-height: calc(100vh - 7rem);
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+
+    padding: 1.5rem;
+
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+    overflow-y: auto;
 }
 
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;
-  transition: color 0.3s ease;
+
+/* =========================================
+   PAGE TITLE
+   ========================================= */
+
+.academic-title {
+    margin: 0 0 1rem 0;
+
+    font-size: 1.2rem;
+    line-height: 1.4;
+
+    font-weight: 700;
+
+    color: #0f172a;
 }
 
-.nav-item:hover {
-  color: white;
-}
 
-.active-nav {
-  background-color: #3b82f6;
-  color: white;
-  border-radius: 0.5rem;
-}
-
-.card-shadow {
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.05),
-    0 2px 4px -1px rgba(0, 0, 0, 0.03);
-}
-
-.section-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #1e293b;
-}
-
-.tab-active {
-  padding: 0.5rem 1rem;
-  background-color: #3b82f6;
-  color: white;
-  border-radius: 0.5rem;
-  cursor: default;
-}
-
-.tab-inactive {
-  padding: 0.5rem 1rem;
-  background-color: #e2e8f0;
-  color: #475569;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-
-a.tab-active,
-a.tab-inactive {
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-a.tab-inactive:hover {
-  background-color: #cbd5e1;
-}
+/* =========================================
+   ACADEMIC TABS
+   ========================================= */
 
 .academic-tabs {
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+
+    gap: 0.6rem;
+
+    margin-bottom: 1.25rem;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   TAB
+   ========================================= */
+
+.academic-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.65rem 1rem;
+
+    border-radius: 0.65rem;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* =========================================
+   ACTIVE TAB
+   ========================================= */
+
+.academic-tab.active {
+    background: #3b82f6;
+    color: #ffffff;
+
+    cursor: default;
+}
+
+
+/* =========================================
+   INACTIVE TABS
+   ========================================= */
+
+.academic-tab:not(.active) {
+    background: #e2e8f0;
+    color: #475569;
+
+    cursor: pointer;
+}
+
+
+.academic-tab:not(.active):hover {
+    background: #cbd5e1;
+    color: #1e293b;
+}
+
+
+/* =========================================
+   INTERNAL MARKS TABLE WRAPPER
+   ========================================= */
+
+.internal-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   INTERNAL MARKS TABLE
+   ========================================= */
+
+.internal-table {
+    width: 100%;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    font-size: 0.9rem;
+
+    color: #1e3a5f;
+}
+
+
+/* =========================================
+   TABLE HEADER
+   ========================================= */
+
+.internal-table thead {
+    background: #f5f8fb;
+}
+
+
+.internal-table th {
+    padding: 0.85rem 1rem;
+
+    text-align: left;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    color: #334155;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLE BODY
+   ========================================= */
+
+.internal-table tbody tr {
+    border-bottom: 1px solid #e5eaf0;
+
+    transition: background-color 0.2s ease;
+}
+
+
+.internal-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================================
+   TABLE CELLS
+   ========================================= */
+
+.internal-table td {
+    padding: 0.8rem 1rem;
+
+    color: #1e3a5f;
+
+    font-size: 0.9rem;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   TOTAL OBTAINED
+   ========================================= */
+
+.internal-table .total-mark {
+    font-weight: 700;
+    color: #1e3a5f;
+}
+
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+.academic-panel {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+
+.academic-panel::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+
+.academic-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.academic-panel::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   TABLE SCROLLBAR
+   ========================================= */
+
+.internal-table-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+
+.internal-table-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+
+.internal-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.internal-table-wrapper::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .academic-panel {
+        padding: 1.25rem;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .academic-panel {
+        min-height: calc(100vh - 6rem);
+        padding: 1rem;
+        border-radius: 0.9rem;
+    }
+
+
+    .academic-title {
+        font-size: 1.1rem;
+    }
+
+
+    .academic-tabs {
+        gap: 0.4rem;
+    }
+
+
+    .academic-tab {
+        padding: 0.55rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+
+    .internal-table {
+        min-width: 700px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .academic-panel {
+        min-height: auto;
+        border-radius: 0.8rem;
+    }
+
+
+    .academic-tabs {
+        align-items: stretch;
+    }
+
+
+    .academic-tab {
+        flex: 0 0 auto;
+    }
+
 }

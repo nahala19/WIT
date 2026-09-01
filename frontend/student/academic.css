@@ -2,7 +2,7 @@
 
 
 /* =========================================
-   TIMETABLE PAGE
+   ACADEMIC PAGE
    ========================================= */
 
 body {
@@ -11,11 +11,13 @@ body {
 
 
 /* =========================================
-   MAIN ACADEMIC PANEL
+   ACADEMIC MAIN PANEL
    ========================================= */
 
 .academic-panel {
+
     width: 100%;
+
     min-height: calc(100vh - 7rem);
 
     box-sizing: border-box;
@@ -23,6 +25,7 @@ body {
     background: #ffffff;
 
     border: 1px solid #e2e8f0;
+
     border-radius: 1rem;
 
     padding: 1.5rem;
@@ -40,9 +43,11 @@ body {
    ========================================= */
 
 .academic-title {
+
     margin: 0 0 1rem 0;
 
     font-size: 1.2rem;
+
     line-height: 1.4;
 
     font-weight: 700;
@@ -56,7 +61,9 @@ body {
    ========================================= */
 
 .academic-tabs {
+
     display: flex;
+
     align-items: center;
 
     gap: 0.6rem;
@@ -72,9 +79,11 @@ body {
    ========================================= */
 
 .academic-tab {
+
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 0.65rem 1rem;
@@ -84,6 +93,7 @@ body {
     text-decoration: none;
 
     font-size: 0.9rem;
+
     font-weight: 500;
 
     line-height: 1.2;
@@ -99,6 +109,7 @@ body {
    ========================================= */
 
 .academic-tab.active {
+
     background: #3b82f6;
 
     color: #ffffff;
@@ -112,6 +123,7 @@ body {
    ========================================= */
 
 .academic-tab:not(.active) {
+
     background: #e2e8f0;
 
     color: #475569;
@@ -121,6 +133,7 @@ body {
 
 
 .academic-tab:not(.active):hover {
+
     background: #cbd5e1;
 
     color: #1e293b;
@@ -128,10 +141,11 @@ body {
 
 
 /* =========================================
-   TIMETABLE WRAPPER
+   ATTENDANCE TABLE WRAPPER
    ========================================= */
 
-.timetable-table-wrapper {
+.attendance-table-wrapper {
+
     width: 100%;
 
     overflow-x: auto;
@@ -139,17 +153,16 @@ body {
 
 
 /* =========================================
-   TIMETABLE TABLE
+   ATTENDANCE TABLE
    ========================================= */
 
-.timetable-table {
+.attendance-table {
+
     width: 100%;
 
     border-collapse: collapse;
 
     border-spacing: 0;
-
-    table-layout: fixed;
 
     font-size: 0.9rem;
 
@@ -158,32 +171,18 @@ body {
 
 
 /* =========================================
-   COLUMN WIDTHS
-   ========================================= */
-
-.timetable-table th:first-child,
-.timetable-table td:first-child {
-    width: 13%;
-}
-
-
-.timetable-table th:not(:first-child),
-.timetable-table td:not(:first-child) {
-    width: 12.42%;
-}
-
-
-/* =========================================
    TABLE HEADER
    ========================================= */
 
-.timetable-table thead {
+.attendance-table thead {
+
     background: #f5f8fb;
 }
 
 
-.timetable-table th {
-    padding: 0.85rem 0.75rem;
+.attendance-table th {
+
+    padding: 0.85rem 1rem;
 
     text-align: left;
 
@@ -193,9 +192,7 @@ body {
 
     color: #334155;
 
-    border-bottom: 1px solid #dfe6ee;
-
-    vertical-align: middle;
+    white-space: nowrap;
 }
 
 
@@ -203,14 +200,16 @@ body {
    TABLE BODY
    ========================================= */
 
-.timetable-table tbody tr {
+.attendance-table tbody tr {
+
     border-bottom: 1px solid #e5eaf0;
 
     transition: background-color 0.2s ease;
 }
 
 
-.timetable-table tbody tr:hover {
+.attendance-table tbody tr:hover {
+
     background: #f8fafc;
 }
 
@@ -219,49 +218,39 @@ body {
    TABLE CELLS
    ========================================= */
 
-.timetable-table td {
-    padding: 0.8rem 0.75rem;
+.attendance-table td {
+
+    padding: 0.8rem 1rem;
 
     color: #1e3a5f;
 
     font-size: 0.9rem;
 
-    line-height: 1.45;
-
-    vertical-align: middle;
-
-    word-wrap: break-word;
+    white-space: nowrap;
 }
 
 
 /* =========================================
-   DAY COLUMN
+   STATUS - SAFE
    ========================================= */
 
-.timetable-table td:first-child {
-    font-weight: 500;
+.status-safe {
 
-    color: #1e3a5f;
+    color: #16a34a !important;
+
+    font-weight: 600;
 }
 
 
 /* =========================================
-   EMPTY PERIOD
+   STATUS - WARNING
    ========================================= */
 
-.timetable-empty {
-    color: #94a3b8 !important;
+.status-warning {
 
-    text-align: center;
-}
+    color: #f97316 !important;
 
-
-/* =========================================
-   SPECIAL ACTIVITIES
-   ========================================= */
-
-.timetable-special {
-    color: #1e3a5f;
+    font-weight: 600;
 }
 
 
@@ -270,6 +259,7 @@ body {
    ========================================= */
 
 .academic-panel {
+
     scrollbar-width: thin;
 
     scrollbar-color: #cbd5e1 transparent;
@@ -277,6 +267,7 @@ body {
 
 
 .academic-panel::-webkit-scrollbar {
+
     width: 6px;
 
     height: 6px;
@@ -284,11 +275,13 @@ body {
 
 
 .academic-panel::-webkit-scrollbar-track {
+
     background: transparent;
 }
 
 
 .academic-panel::-webkit-scrollbar-thumb {
+
     background: #cbd5e1;
 
     border-radius: 10px;
@@ -299,24 +292,28 @@ body {
    TABLE SCROLLBAR
    ========================================= */
 
-.timetable-table-wrapper {
+.attendance-table-wrapper {
+
     scrollbar-width: thin;
 
     scrollbar-color: #cbd5e1 transparent;
 }
 
 
-.timetable-table-wrapper::-webkit-scrollbar {
+.attendance-table-wrapper::-webkit-scrollbar {
+
     height: 6px;
 }
 
 
-.timetable-table-wrapper::-webkit-scrollbar-track {
+.attendance-table-wrapper::-webkit-scrollbar-track {
+
     background: transparent;
 }
 
 
-.timetable-table-wrapper::-webkit-scrollbar-thumb {
+.attendance-table-wrapper::-webkit-scrollbar-thumb {
+
     background: #cbd5e1;
 
     border-radius: 10px;
@@ -330,7 +327,9 @@ body {
 @media (max-width: 900px) {
 
     .academic-panel {
+
         padding: 1.25rem;
+
     }
 
 }
@@ -343,33 +342,43 @@ body {
 @media (max-width: 768px) {
 
     .academic-panel {
+
         min-height: calc(100vh - 6rem);
 
         padding: 1rem;
 
         border-radius: 0.9rem;
+
     }
 
 
     .academic-title {
+
         font-size: 1.1rem;
+
     }
 
 
     .academic-tabs {
+
         gap: 0.4rem;
+
     }
 
 
     .academic-tab {
+
         padding: 0.55rem 0.75rem;
 
         font-size: 0.8rem;
+
     }
 
 
-    .timetable-table {
-        min-width: 900px;
+    .attendance-table {
+
+        min-width: 700px;
+
     }
 
 }
@@ -382,19 +391,25 @@ body {
 @media (max-width: 600px) {
 
     .academic-panel {
+
         min-height: auto;
 
         border-radius: 0.8rem;
+
     }
 
 
     .academic-tabs {
+
         align-items: stretch;
+
     }
 
 
     .academic-tab {
+
         flex: 0 0 auto;
+
     }
 
 }

@@ -1,107 +1,707 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Notifications - Learning Hub</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="css/notification.css"/>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications - Learning Hub</title>
+
+
+    <!-- =====================================
+         FONT AWESOME
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================
+         GLOBAL THEME
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="../css/global_theme.css">
+
+
+    <!-- =====================================
+         NOTIFICATION CSS
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="css/notification.css">
+
 </head>
-<body class="flex min-h-screen">
 
-  <!-- Sidebar -->
-  <aside class="sidebar w-56 text-slate-300 flex flex-col p-3 space-y-3">
-    <div class="px-3 py-3 text-lg font-bold text-white flex items-center gap-2">
-      <div class="w-6 h-6 bg-white/20 rounded-md"></div>
-      Learning Hub
+
+<body>
+
+
+<div class="app-layout">
+
+
+    <!-- =====================================
+         SIDEBAR OVERLAY
+         ===================================== -->
+
+    <div id="sidebar-overlay"
+         class="sidebar-overlay"
+         aria-hidden="true">
     </div>
-    <nav class="flex-1 space-y-1">
-      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-      <a href="internal.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
-      <a href="course.html" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
-      <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
-      <a href="attendance.html" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
-      <a href="notification.html" class="nav-item active-nav"><i class="fa-solid fa-bell"></i> Notification</a>
-      <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
-    </nav>
-    <a href="#" class="nav-item border-t border-slate-700 pt-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-  </aside>
 
-  <!-- Main Content -->
-  <main class="flex-1 p-4 overflow-hidden">
-    <!-- Header -->
-    <header class="flex justify-between items-center mb-4">
-      <div class="flex items-center gap-3">
-        <img src="https://ui-avatars.com/api/?name=Emily+Johnson&background=random" class="w-10 h-10 rounded-full border-2 border-white shadow-sm"/>
-        <div>
-          <h1 class="text-lg font-bold text-slate-800">Good Morning, Emily Johnson</h1>
-          <p class="text-xs text-slate-500">Tuesday, December 30</p>
+
+    <!-- =====================================
+         SIDEBAR
+         ===================================== -->
+
+    <aside id="sidebar"
+           class="sidebar"
+           aria-label="Main navigation">
+
+
+        <!-- =================================
+             LOGO / BRAND
+             ================================= -->
+
+        <div class="sidebar-brand">
+
+
+            <div class="sidebar-brand-icon">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+
+            <span>
+
+                Learning Hub
+
+            </span>
+
+
         </div>
-      </div>
-    </header>
 
-    <!-- Notification Table -->
-    <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
-      <h2 class="section-title mb-4">Notifications</h2>
-      <table class="w-full text-sm text-left border border-slate-200">
-        <thead class="bg-slate-100 text-slate-600 font-semibold">
-          <tr>
-            <th class="px-3 py-2">Subject & Details</th>
-            <th class="px-3 py-2">Date</th>
-            <th class="px-3 py-2">Category</th>
-            <th class="px-3 py-2">Action</th>
-          </tr>
-        </thead>
-        <tbody class="text-slate-700">
-          <tr class="border-t">
-            <td class="px-3 py-2">
-              <strong>Mid-Semester Exam Schedule Released</strong><br/>
-              Exam dates for Fall 2024 have been published.
-            </td>
-            <td class="px-3 py-2">12 Nov, 2024</td>
-            <td class="px-3 py-2">Examination</td>
-            <td class="px-3 py-2 text-blue-500 font-semibold cursor-pointer hover:underline">View Schedule</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">
-              <strong>Submission Deadline Extension</strong><br/>
-              Web Technologies Lab Record 4 deadline extended.
-            </td>
-            <td class="px-3 py-2">10 Nov, 2024</td>
-            <td class="px-3 py-2">Academic</td>
-            <td class="px-3 py-2 text-blue-500 font-semibold cursor-pointer hover:underline">View Details</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">
-              <strong>Tech Fest "Innovate 24" Registration</strong><br/>
-              Register for hackathons and workshops before 20th.
-            </td>
-            <td class="px-3 py-2">05 Nov, 2024</td>
-            <td class="px-3 py-2">Event</td>
-            <td class="px-3 py-2 text-blue-500 font-semibold cursor-pointer hover:underline">Register</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">
-              <strong>Grade Card Update</strong><br/>
-              Internal assessment grades for Module 2 are live.
-            </td>
-            <td class="px-3 py-2">01 Nov, 2024</td>
-            <td class="px-3 py-2">Academic</td>
-            <td class="px-3 py-2 text-blue-500 font-semibold cursor-pointer hover:underline">Check Grades</td>
-          </tr>
-          <tr class="border-t">
-            <td class="px-3 py-2">
-              <strong>Library Due Notice</strong><br/>
-              Please return "Intro to Algorithms" by tomorrow.
-            </td>
-            <td class="px-3 py-2">28 Oct, 2024</td>
-            <td class="px-3 py-2">Alert</td>
-            <td class="px-3 py-2 text-blue-500 font-semibold cursor-pointer hover:underline">View Status</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
+
+        <!-- =================================
+             NAVIGATION
+             ================================= -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- Dashboard -->
+
+            <a href="dashboard.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- Task -->
+
+            <a href="task.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <span>
+                    Task
+                </span>
+
+            </a>
+
+
+            <!-- Course Selection -->
+
+            <a href="course.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-book"></i>
+
+                <span>
+                    Course Selection
+                </span>
+
+            </a>
+
+
+            <!-- Feedback -->
+
+            <a href="feedback.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-comment-dots"></i>
+
+                <span>
+                    Feedback &amp; Grievance
+                </span>
+
+            </a>
+
+
+            <!-- Academic -->
+
+            <a href="academic.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <span>
+                    Academic
+                </span>
+
+            </a>
+
+
+            <!-- =================================
+                 NOTIFICATION ACTIVE
+                 ================================= -->
+
+            <a href="notification.html"
+               class="nav-item active-nav"
+               aria-current="page">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <span>
+                    Notification
+                </span>
+
+            </a>
+
+
+            <!-- Settings -->
+
+            <a href="settings.html"
+               class="nav-item">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================
+             LOGOUT
+             ================================= -->
+
+        <a href="../login.html"
+           class="nav-item nav-logout">
+
+            <i class="fas fa-sign-out-alt"></i>
+
+            <span>
+                Logout
+            </span>
+
+        </a>
+
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+         ===================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             HEADER
+             ================================= -->
+
+        <header class="top-bar">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="top-bar-left">
+
+
+                <!-- Mobile Menu -->
+
+                <button type="button"
+                        id="menu-toggle"
+                        class="menu-toggle"
+                        aria-label="Open menu"
+                        aria-expanded="false"
+                        aria-controls="sidebar">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <!-- Greeting -->
+
+                <div class="greeting-block">
+
+
+                    <img
+                        src="https://ui-avatars.com/api/?name=Emily+Johnson&background=3b82f6&color=fff"
+                        alt="Emily Johnson"
+                        class="greeting-avatar"
+                    >
+
+
+                    <div>
+
+
+                        <h1 class="greeting-title">
+
+                            Good morning, Emily
+
+                        </h1>
+
+
+                        <p class="greeting-date">
+
+                            Tuesday, December 30
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 USER PROFILE
+                 ================================= -->
+
+            <div class="user-pill">
+
+
+                <div class="user-pill-info">
+
+
+                    <p class="user-pill-name">
+
+                        Emily Johnson
+
+                    </p>
+
+
+                    <span class="user-pill-role">
+
+                        STUDENT
+
+                    </span>
+
+
+                </div>
+
+
+                <!-- Logout -->
+
+                <a href="../login.html"
+                   class="logout-btn"
+                   aria-label="Log out">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =================================
+             NOTIFICATION CONTENT
+             ================================= -->
+
+        <section class="notification-panel">
+
+
+            <!-- PAGE TITLE -->
+
+            <h2 class="notification-title">
+
+                Notifications
+
+            </h2>
+
+
+            <!-- =================================
+                 NOTIFICATION TABLE
+                 ================================= -->
+
+            <div class="notification-table-wrapper">
+
+
+                <table class="notification-table">
+
+
+                    <!-- TABLE HEADER -->
+
+                    <thead>
+
+                        <tr>
+
+
+                            <th class="notification-subject">
+
+                                Subject &amp; Details
+
+                            </th>
+
+
+                            <th class="notification-date">
+
+                                Date
+
+                            </th>
+
+
+                            <th class="notification-category">
+
+                                Category
+
+                            </th>
+
+
+                            <th class="notification-action">
+
+                                Action
+
+                            </th>
+
+
+                        </tr>
+
+                    </thead>
+
+
+                    <!-- TABLE BODY -->
+
+                    <tbody>
+
+
+                        <!-- =================================
+                             NOTIFICATION 1
+                             ================================= -->
+
+                        <tr>
+
+
+                            <td class="notification-subject">
+
+
+                                <span class="notification-subject-title">
+
+                                    Mid-Semester Exam Schedule Released
+
+                                </span>
+
+
+                                <span class="notification-description">
+
+                                    Exam dates for Fall 2024 have been published.
+
+                                </span>
+
+
+                            </td>
+
+
+                            <td class="notification-date">
+
+                                12 Nov, 2024
+
+                            </td>
+
+
+                            <td class="notification-category">
+
+                                Examination
+
+                            </td>
+
+
+                            <td class="notification-action">
+
+                                <a href="#">
+
+                                    View Schedule
+
+                                </a>
+
+                            </td>
+
+
+                        </tr>
+
+
+                        <!-- =================================
+                             NOTIFICATION 2
+                             ================================= -->
+
+                        <tr>
+
+
+                            <td class="notification-subject">
+
+
+                                <span class="notification-subject-title">
+
+                                    Submission Deadline Extension
+
+                                </span>
+
+
+                                <span class="notification-description">
+
+                                    Web Technologies Lab Record 4 deadline extended.
+
+                                </span>
+
+
+                            </td>
+
+
+                            <td class="notification-date">
+
+                                10 Nov, 2024
+
+                            </td>
+
+
+                            <td class="notification-category">
+
+                                Academic
+
+                            </td>
+
+
+                            <td class="notification-action">
+
+                                <a href="#">
+
+                                    View Details
+
+                                </a>
+
+                            </td>
+
+
+                        </tr>
+
+
+                        <!-- =================================
+                             NOTIFICATION 3
+                             ================================= -->
+
+                        <tr>
+
+
+                            <td class="notification-subject">
+
+
+                                <span class="notification-subject-title">
+
+                                    Tech Fest "Innovate 24" Registration
+
+                                </span>
+
+
+                                <span class="notification-description">
+
+                                    Register for hackathons and workshops before 20th.
+
+                                </span>
+
+
+                            </td>
+
+
+                            <td class="notification-date">
+
+                                05 Nov, 2024
+
+                            </td>
+
+
+                            <td class="notification-category">
+
+                                Event
+
+                            </td>
+
+
+                            <td class="notification-action">
+
+                                <a href="#">
+
+                                    Register
+
+                                </a>
+
+                            </td>
+
+
+                        </tr>
+
+
+                        <!-- =================================
+                             NOTIFICATION 4
+                             ================================= -->
+
+                        <tr>
+
+
+                            <td class="notification-subject">
+
+
+                                <span class="notification-subject-title">
+
+                                    Grade Card Update
+
+                                </span>
+
+
+                                <span class="notification-description">
+
+                                    Internal assessment grades for Module 2 are live.
+
+                                </span>
+
+
+                            </td>
+
+
+                            <td class="notification-date">
+
+                                01 Nov, 2024
+
+                            </td>
+
+
+                            <td class="notification-category">
+
+                                Academic
+
+                            </td>
+
+
+                            <td class="notification-action">
+
+                                <a href="#">
+
+                                    Check Grades
+
+                                </a>
+
+                            </td>
+
+
+                        </tr>
+
+
+                        <!-- =================================
+                             NOTIFICATION 5
+                             ================================= -->
+
+                        <tr>
+
+
+                            <td class="notification-subject">
+
+
+                                <span class="notification-subject-title">
+
+                                    Library Due Notice
+
+                                </span>
+
+
+                                <span class="notification-description">
+
+                                    Please return "Intro to Algorithms" by tomorrow.
+
+                                </span>
+
+
+                            </td>
+
+
+                            <td class="notification-date">
+
+                                28 Oct, 2024
+
+                            </td>
+
+
+                            <td class="notification-category">
+
+                                Alert
+
+                            </td>
+
+
+                            <td class="notification-action">
+
+                                <a href="#">
+
+                                    View Status
+
+                                </a>
+
+                            </td>
+
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- =====================================
+     GLOBAL JAVASCRIPT
+     ===================================== -->
+
+<script src="../js/global.js"></script>
+
+
 </body>
+
 </html>

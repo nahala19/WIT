@@ -1,82 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Academic Records - Syllabus & Material</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="css/syllabus.css"/>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Records - Syllabus &amp; Material</title>
+
+
+    <!-- =====================================
+         GLOBAL THEME
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="../css/global_theme.css">
+
+
+    <!-- =====================================
+         ICONS
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================
+         SYLLABUS CSS
+         ===================================== -->
+
+    <link rel="stylesheet"
+          href="css/syllabus.css">
+
 </head>
-<body class="flex min-h-screen">
 
-  <!-- Sidebar -->
-  <aside class="sidebar w-56 text-slate-300 flex flex-col p-3 space-y-3">
-    <div class="px-3 py-3 text-lg font-bold text-white flex items-center gap-2">
-      <div class="w-6 h-6 bg-white/20 rounded-md"></div>
-      Learning Hub
-    </div>
-    <nav class="flex-1 space-y-1">
-      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-      <a href="internal.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
-      <a href="course.html" class="nav-item"><i class="fa-solid fa-book"></i> Course Selection</a>
-      <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
-      <a href="attendance.html" class="nav-item active-nav"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
-      <a href="notification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
-      <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
-    </nav>
-    <a href="#" class="nav-item border-t border-slate-700 pt-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-  </aside>
 
-  <!-- Main Content -->
-  <main class="flex-1 p-4 overflow-hidden">
-    <!-- Header -->
-    <header class="flex justify-between items-center mb-4">
-      <div class="flex items-center gap-3">
-        <img src="https://ui-avatars.com/api/?name=Arjun+PS&background=random" class="w-10 h-10 rounded-full border-2 border-white shadow-sm"/>
-        <div>
-          <h1 class="text-lg font-bold text-slate-800">Good Morning, Arjun PS</h1>
-          <p class="text-xs text-slate-500">Semester 5</p>
-        </div>
-      </div>
-    </header>
+<body>
 
-    <!-- Academic Records -->
-    <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
-      <h2 class="section-title mb-4">Academic Records - Syllabus & Material</h2>
 
-      <nav class="academic-tabs flex gap-4 mb-6 text-sm font-medium text-slate-600" aria-label="Academic records">
-        <a href="attendance.html" class="tab-inactive">Attendance</a>
-        <a href="internal.html" class="tab-inactive">Internal Marks</a>
-        <a href="timetable.html" class="tab-inactive">Timetable</a>
-        <a href="syllabus.html" class="tab-active" aria-current="page">Syllabus &amp; Material</a>
-      </nav>
+<div class="app-layout">
 
-      <!-- Module List -->
-      <div class="space-y-6">
-        <div class="module-card">
-          <h3 class="module-title">Module 1: Introduction to Data Structures</h3>
-          <ul class="module-list">
-            <li><a href="#" class="module-link">Module 1 Notes PDF</a></li>
-            <li><a href="#" class="module-link">Reference Link: Video Lecture</a></li>
-            <li><a href="#" class="module-link">Syllabus PDF</a></li>
-          </ul>
+
+    <!-- =====================================
+         SIDEBAR
+         ===================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Learning Hub -->
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+
+                <i class="fas fa-graduation-cap"></i>
+
+            </div>
+
+            Learning Hub
+
         </div>
 
-        <div class="module-card">
-          <h3 class="module-title">Module 2: Arrays and Strings</h3>
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- Dashboard -->
+
+            <a href="dashboard.html"
+               class="nav-item">
+
+                <i class="fas fa-home"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <!-- Task -->
+
+            <a href="task.html"
+               class="nav-item">
+
+                <i class="fas fa-tasks"></i>
+
+                <span>Task</span>
+
+            </a>
+
+
+            <!-- Course Selection -->
+
+            <a href="course.html"
+               class="nav-item">
+
+                <i class="fas fa-book"></i>
+
+                <span>Course Selection</span>
+
+            </a>
+
+
+            <!-- Feedback -->
+
+            <a href="feedback.html"
+               class="nav-item">
+
+                <i class="fas fa-comment-dots"></i>
+
+                <span>Feedback &amp; Grievance</span>
+
+            </a>
+
+
+            <!-- Academic ACTIVE -->
+
+            <a href="academic.html"
+               class="nav-item active-nav">
+
+                <i class="fas fa-graduation-cap"></i>
+
+                <span>Academic</span>
+
+            </a>
+
+
+            <!-- Notification -->
+
+            <a href="notification.html"
+               class="nav-item">
+
+                <i class="fas fa-bell"></i>
+
+                <span>Notification</span>
+
+            </a>
+
+
+            <!-- Settings -->
+
+            <a href="settings.html"
+               class="nav-item">
+
+                <i class="fas fa-cog"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- Logout -->
+
+        <div class="nav-logout">
+
+            <a href="../login.html"
+               class="nav-item">
+
+                <i class="fas fa-sign-out-alt"></i>
+
+                <span>Logout</span>
+
+            </a>
+
         </div>
 
-        <div class="module-card">
-          <h3 class="module-title">Module 3: Linked Lists</h3>
+
+    </aside>
+
+
+    <!-- Mobile Overlay -->
+
+    <div class="sidebar-overlay"></div>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+         ===================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             GLOBAL HEADER
+             ================================= -->
+
+        <div class="top-bar">
+
+
+            <!-- LEFT -->
+
+            <div class="top-bar-left">
+
+
+                <!-- Hamburger -->
+
+                <button class="menu-toggle"
+                        id="menuToggle"
+                        type="button">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+
+                <!-- Greeting -->
+
+                <div class="greeting-block">
+
+
+                    <img
+                        src="https://ui-avatars.com/api/?name=Emily+Johnson&background=3b82f6&color=fff"
+                        alt="Emily Johnson"
+                        class="greeting-avatar"
+                    >
+
+
+                    <div>
+
+                        <h1 class="greeting-title">
+
+                            Good morning, Emily
+
+                        </h1>
+
+
+                        <p class="greeting-date">
+
+                            Tuesday, December 30
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 RIGHT USER PROFILE
+                 ================================= -->
+
+            <div class="user-pill">
+
+
+                <div class="user-pill-info">
+
+                    <p class="user-pill-name">
+
+                        Emily Johnson
+
+                    </p>
+
+
+                    <span class="user-pill-role">
+
+                        STUDENT
+
+                    </span>
+
+                </div>
+
+
+                <!-- Logout -->
+
+                <a href="../login.html"
+                   class="logout-btn"
+                   aria-label="Log out">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                </a>
+
+
+            </div>
+
+
         </div>
 
-        <div class="module-card">
-          <h3 class="module-title">Module 4: Stacks and Queues</h3>
-        </div>
-      </div>
-    </div>
-  </main>
+
+        <!-- =================================
+             SYLLABUS CONTENT
+             ================================= -->
+
+        <section class="academic-panel">
+
+
+            <!-- PAGE TITLE -->
+
+            <h2 class="academic-title">
+
+                Academic Records - Syllabus &amp; Material
+
+            </h2>
+
+
+            <!-- =================================
+                 ACADEMIC TABS
+                 ================================= -->
+
+            <nav class="academic-tabs"
+                 aria-label="Academic records">
+
+
+                <!-- Attendance -->
+
+                <a href="academic.html"
+                   class="academic-tab">
+
+                    Attendance
+
+                </a>
+
+
+                <!-- Internal Marks -->
+
+                <a href="internal.html"
+                   class="academic-tab">
+
+                    Internal Marks
+
+                </a>
+
+
+                <!-- Timetable -->
+
+                <a href="timetable.html"
+                   class="academic-tab">
+
+                    Timetable
+
+                </a>
+
+
+                <!-- Syllabus ACTIVE -->
+
+                <a href="syllabus.html"
+                   class="academic-tab active"
+                   aria-current="page">
+
+                    Syllabus &amp; Material
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- =================================
+                 MODULE LIST
+                 ================================= -->
+
+            <div class="module-list">
+
+
+                <!-- =================================
+                     MODULE 1
+                     ================================= -->
+
+                <div class="module-card">
+
+
+                    <h3 class="module-title">
+
+                        Module 1: Introduction to Data Structures
+
+                    </h3>
+
+
+                    <ul class="module-links">
+
+
+                        <li>
+
+                            <a href="#"
+                               class="module-link">
+
+                                Module 1 Notes PDF
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#"
+                               class="module-link">
+
+                                Reference Link: Video Lecture
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#"
+                               class="module-link">
+
+                                Syllabus PDF
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+
+
+                <!-- =================================
+                     MODULE 2
+                     ================================= -->
+
+                <div class="module-card">
+
+
+                    <h3 class="module-title">
+
+                        Module 2: Arrays and Strings
+
+                    </h3>
+
+
+                </div>
+
+
+                <!-- =================================
+                     MODULE 3
+                     ================================= -->
+
+                <div class="module-card">
+
+
+                    <h3 class="module-title">
+
+                        Module 3: Linked Lists
+
+                    </h3>
+
+
+                </div>
+
+
+                <!-- =================================
+                     MODULE 4
+                     ================================= -->
+
+                <div class="module-card">
+
+
+                    <h3 class="module-title">
+
+                        Module 4: Stacks and Queues
+
+                    </h3>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- =====================================
+     GLOBAL JAVASCRIPT
+     ===================================== -->
+
+<script src="../js/global.js"></script>
+
+
 </body>
-</html>
 
+</html>

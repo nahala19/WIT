@@ -18,6 +18,237 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <style>
+
+        /* =========================
+           TASK TABLE
+           ========================= */
+
+        .task-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            table-layout: fixed;
+            font-size: 16px;
+            color: #173b67;
+            border: 1px solid #d9e2ec;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        /* Table heading */
+
+        .task-table th {
+            background: #f1f5f9;
+            color: #334e68;
+            font-weight: 600;
+            text-align: left;
+            padding: 16px;
+            border-bottom: 1px solid #d9e2ec;
+        }
+
+        /* Table cells */
+
+        .task-table td {
+            padding: 16px;
+            text-align: left;
+            vertical-align: middle;
+            border-bottom: 1px solid #d9e2ec;
+        }
+
+        /* Last row */
+
+        .task-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Column widths */
+
+        .task-table th:nth-child(1),
+        .task-table td:nth-child(1) {
+            width: 27%;
+        }
+
+        .task-table th:nth-child(2),
+        .task-table td:nth-child(2) {
+            width: 29%;
+        }
+
+        .task-table th:nth-child(3),
+        .task-table td:nth-child(3) {
+            width: 14%;
+        }
+
+        .task-table th:nth-child(4),
+        .task-table td:nth-child(4) {
+            width: 15%;
+        }
+
+        .task-table th:nth-child(5),
+        .task-table td:nth-child(5) {
+            width: 15%;
+        }
+
+        /* =========================
+           STATUS
+           ========================= */
+
+        .task-table .status {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .task-table .status.pending {
+            background: #fff1c7;
+            color: #a05200;
+        }
+
+        .task-table .status.submitted {
+            background: #d9f7e5;
+            color: #087443;
+        }
+
+        /* =========================
+           BUTTONS
+           ========================= */
+
+        .task-table .submit-btn,
+        .task-table .view-btn {
+            border: none;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .task-table .submit-btn {
+            background: #3984f5;
+            color: white;
+        }
+
+        .task-table .view-btn {
+            background: #e2e8f0;
+            color: #26384d;
+        }
+/* =========================
+   UPLOAD MODAL
+   ========================= */
+
+.upload-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.upload-modal.show {
+    display: flex;
+}
+
+.upload-modal-content {
+    width: 90%;
+    max-width: 620px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+
+.upload-modal-header {
+    margin-bottom: 25px;
+}
+
+.upload-modal-header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #172b4d;
+}
+
+/* File section */
+
+.upload-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.upload-field label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #334e68;
+}
+
+.upload-field input[type="file"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d9e2ec;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Selected file */
+
+.file-name-text {
+    margin: 12px 0 25px;
+    padding: 14px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Buttons */
+
+.upload-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.upload-actions button {
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondary-btn {
+    background: #e2e8f0;
+    color: #334155;
+    border: none;
+}
+
+.primary-btn {
+    background: #3984f5;
+    color: white;
+    border: none;
+}
+
+.secondary-btn:hover {
+    background: #cbd5e1;
+}
+
+.primary-btn:hover {
+    background: #2563eb;
+}
+    </style>
+
 </head>
 
 
@@ -35,6 +266,7 @@
 
 
         <!-- Learning Hub -->
+
         <div class="sidebar-brand">
 
             <div class="sidebar-brand-icon">
@@ -49,6 +281,7 @@
 
 
         <!-- Navigation -->
+
         <nav class="sidebar-nav">
 
 
@@ -126,6 +359,7 @@
 
 
         <!-- Sidebar Logout -->
+
         <div class="nav-logout">
 
             <a href="#"
@@ -144,8 +378,8 @@
 
 
     <!-- Mobile overlay -->
-    <div class="sidebar-overlay"></div>
 
+    <div class="sidebar-overlay"></div>
 
 
     <!-- =====================================
@@ -155,18 +389,18 @@
     <main class="main-content">
 
 
-        <!-- =================================
-             GLOBAL HEADER
-             ================================= -->
+        <!-- GLOBAL HEADER -->
 
         <div class="top-bar">
 
 
             <!-- LEFT -->
+
             <div class="top-bar-left">
 
 
                 <!-- Hamburger -->
+
                 <button class="menu-toggle"
                         id="menuToggle">
 
@@ -176,16 +410,19 @@
 
 
                 <!-- Greeting -->
+
                 <div class="greeting-block">
 
 
                     <img
-    src="https://ui-avatars.com/api/?name=Emily+Johnson&background=3b82f6&color=fff"
-    alt=""
-    class="greeting-avatar"
->
+                        src="https://ui-avatars.com/api/?name=Emily+Johnson&background=3b82f6&color=fff"
+                        alt=""
+                        class="greeting-avatar"
+                    >
+
 
                     <div>
+
 
                         <h1 class="greeting-title">
 
@@ -200,6 +437,7 @@
 
                         </p>
 
+
                     </div>
 
 
@@ -209,9 +447,7 @@
             </div>
 
 
-            <!-- =================================
-                 RIGHT USER PROFILE
-                 ================================= -->
+            <!-- RIGHT USER PROFILE -->
 
             <div class="user-pill">
 
@@ -235,13 +471,14 @@
 
                 </div>
 
-<a href="../login.html"
-   class="logout-btn"
-   aria-label="Log out">
 
-    <i class="fas fa-sign-out-alt"></i>
+                <a href="../login.html"
+                   class="logout-btn"
+                   aria-label="Log out">
 
-</a>
+                    <i class="fas fa-sign-out-alt"></i>
+
+                </a>
 
 
             </div>
@@ -250,46 +487,513 @@
         </div>
 
 
+        <!-- =====================================
+             TASK CONTENT
+             ===================================== -->
 
-        <!-- =================================
-             ONLY THIS PART CHANGES PER PAGE
-             ================================= -->
-
-        <div class="task-content">
-
-
-            <h1>Tasks</h1>
-
-            <p>
-                Task page test
-            </p>
+        <main class="flex-1 p-4 overflow-hidden">
 
 
-            <h2>
-                Global Theme Test
-            </h2>
+            <header class="flex justify-between items-center mb-2">
+
+                <div></div>
+
+            </header>
 
 
-            <p>
-                This is the Task page.
-                The sidebar, header, colors,
-                fonts, icons and layout are
-                controlled by the global theme.
-            </p>
+            <!-- Tasks -->
 
+            <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
+
+
+                <h2 class="section-title mb-4">
+
+                    Tasks & Submissions
+
+                </h2>
+
+
+                <div class="mb-6">
+
+                    <p class="text-sm text-slate-600">
+
+                        Track your pending assignments and submitted work.
+
+                    </p>
+
+                </div>
+
+
+                <!-- TASK TABLE -->
+
+                <table class="task-table">
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Task / Assignment
+                            </th>
+
+                            <th>
+                                Deadline
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Submit
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <!-- ROW 1 -->
+
+                        <tr>
+
+                            <td>
+                                Database Management (CS301)
+                            </td>
+
+                            <td>
+                                Complete SQL Queries Assignment
+                            </td>
+
+                            <td>
+                                30 Aug 2026
+                            </td>
+
+                            <td>
+
+                                <span class="status pending">
+                                    Pending
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="submit-btn"
+                                    type="button">
+
+                                    Submit
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ROW 2 -->
+
+                        <tr>
+
+                            <td>
+                                Operating Systems (CS302)
+                            </td>
+
+                            <td>
+                                CPU Scheduling Report
+                            </td>
+
+                            <td>
+                                2 Sep 2026
+                            </td>
+
+                            <td>
+
+                                <span class="status pending">
+                                    Pending
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="submit-btn"
+                                    type="button">
+
+                                    Submit
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ROW 3 -->
+
+                        <tr>
+
+                            <td>
+                                Software Engineering (CS304)
+                            </td>
+
+                            <td>
+                                SRS Document
+                            </td>
+
+                            <td>
+                                5 Sep 2026
+                            </td>
+
+                            <td>
+
+                                <span class="status submitted">
+                                    Submitted
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-btn"
+                                    type="button">
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- ROW 4 -->
+
+                        <tr>
+
+                            <td>
+                                Computer Networks (CS305)
+                            </td>
+
+                            <td>
+                                Network Design Assignment
+                            </td>
+
+                            <td>
+                                8 Sep 2026
+                            </td>
+
+                            <td>
+
+                                <span class="status pending">
+                                    Pending
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="submit-btn"
+                                    type="button">
+
+                                    Submit
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+           <div
+    id="uploadModal"
+    class="upload-modal"
+    aria-hidden="true">
+
+    <div class="upload-modal-content">
+
+        <div class="upload-modal-header">
+
+            <h3 id="uploadTitle">
+                Upload Assignment PDF
+            </h3>
 
         </div>
 
+        <form id="uploadForm">
 
-    </main>
+            <div class="upload-field">
 
+                <label for="assignmentFile">
+                    Choose PDF file
+                </label>
+
+                <input
+                    id="assignmentFile"
+                    type="file"
+                    accept="application/pdf"
+                    required
+                >
+
+            </div>
+
+            <p
+                id="fileNameText"
+                class="file-name-text">
+
+                No file selected
+
+            </p>
+
+            <div class="upload-actions">
+
+                <button
+                    type="button"
+                    id="cancelUpload"
+                    class="secondary-btn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    Submit PDF
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
 
 </div>
 
+        </main>
 
 
-<!-- GLOBAL JAVASCRIPT -->
-<script src="../js/global.js"></script>
+  <script>
+
+    const modal =
+        document.getElementById('uploadModal');
+
+    const uploadTitle =
+        document.getElementById('uploadTitle');
+
+    const fileInput =
+        document.getElementById('assignmentFile');
+
+    const fileNameText =
+        document.getElementById('fileNameText');
+
+    const uploadForm =
+        document.getElementById('uploadForm');
+
+    const cancelUpload =
+        document.getElementById('cancelUpload');
+
+    let selectedRow = null;
+
+
+    /* =========================
+       OPEN UPLOAD MODAL
+       ========================= */
+
+    document
+        .querySelectorAll('.submit-btn')
+        .forEach(function(button) {
+
+            button.addEventListener('click', function() {
+
+                selectedRow =
+                    button.closest('tr');
+
+                const assignmentText =
+                    selectedRow
+                        .cells[1]
+                        .textContent
+                        .trim();
+
+                uploadTitle.textContent =
+                    'Upload ' + assignmentText;
+
+                modal.classList.add('show');
+
+                modal.setAttribute(
+                    'aria-hidden',
+                    'false'
+                );
+
+            });
+
+        });
+
+
+    /* =========================
+       CLOSE MODAL
+       ========================= */
+
+    function closeModal() {
+
+        modal.classList.remove('show');
+
+        modal.setAttribute(
+            'aria-hidden',
+            'true'
+        );
+
+        uploadForm.reset();
+
+        fileNameText.textContent =
+            'No file selected';
+
+    }
+
+
+    /* CANCEL BUTTON */
+
+    cancelUpload.addEventListener(
+        'click',
+        closeModal
+    );
+
+
+    /* =========================
+       FILE SELECTION
+       ========================= */
+
+    fileInput.addEventListener(
+        'change',
+        function() {
+
+            if (
+                fileInput.files &&
+                fileInput.files[0]
+            ) {
+
+                fileNameText.textContent =
+                    fileInput.files[0].name;
+
+            } else {
+
+                fileNameText.textContent =
+                    'No file selected';
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       SUBMIT PDF
+       ========================= */
+
+    uploadForm.addEventListener(
+        'submit',
+        function(event) {
+
+            event.preventDefault();
+
+
+            /* CHECK FILE */
+
+            if (
+                !fileInput.files ||
+                !fileInput.files[0]
+            ) {
+
+                fileNameText.textContent =
+                    'Please select a PDF file before submitting.';
+
+                return;
+
+            }
+
+
+            /* UPDATE SELECTED ROW */
+
+            if (selectedRow) {
+
+                /* CHANGE STATUS */
+
+                const statusCell =
+                    selectedRow.querySelector('.status');
+
+                statusCell.textContent =
+                    'Submitted';
+
+                statusCell.classList.remove(
+                    'pending'
+                );
+
+                statusCell.classList.add(
+                    'submitted'
+                );
+
+
+                /* CHANGE SUBMIT TO VIEW */
+
+                const actionButton =
+                    selectedRow.querySelector(
+                        'button.submit-btn'
+                    );
+
+                if (actionButton) {
+
+                    actionButton.textContent =
+                        'View';
+
+                    actionButton.classList.remove(
+                        'submit-btn'
+                    );
+
+                    actionButton.classList.add(
+                        'view-btn'
+                    );
+
+                }
+
+            }
+
+
+            /* CLOSE MODAL */
+
+            closeModal();
+
+        }
+    );
+
+</script>
+
+
+    <!-- GLOBAL JAVASCRIPT -->
+
+    <script src="../js/global.js"></script>
 
 
 </body>

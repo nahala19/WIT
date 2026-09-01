@@ -1,97 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Course Selection - Learning Hub</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="css/course.css"/>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Course Selection - Learning Hub</title>
+
+    <!-- GLOBAL THEME -->
+    <link rel="stylesheet"
+          href="../css/global_theme.css">
+
+    <!-- COURSE PAGE CSS -->
+    <link rel="stylesheet"
+          href="css/course.css">
+
+    <!-- ICONS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
-<body class="flex min-h-screen">
 
-  <!-- Sidebar -->
-  <aside class="sidebar w-56 text-slate-300 flex flex-col p-3 space-y-3">
-    <div class="px-3 py-3 text-lg font-bold text-white flex items-center gap-2">
-      <div class="w-6 h-6 bg-white/20 rounded-md"></div>
-      Learning Hub
-    </div>
-    <nav class="flex-1 space-y-1">
-      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-      <a href="internal.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Task</a>
-      <a href="course.html" class="nav-item active-nav"><i class="fa-solid fa-book"></i> Course Selection</a>
-      <a href="feedback.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Feedback & Grievance</a>
-      <a href="attendance.html" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Academic</a>
-      <a href="notification.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notification</a>
-      <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
-    </nav>
-    <a href="#" class="nav-item border-t border-slate-700 pt-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-  </aside>
 
-  <!-- Main Content -->
-  <main class="flex-1 p-4 overflow-hidden">
-    <!-- Header -->
-    <header class="flex justify-between items-center mb-4">
-      <div class="flex items-center gap-3">
-        <img src="https://ui-avatars.com/api/?name=Emily+Johnson&background=random" class="w-10 h-10 rounded-full border-2 border-white shadow-sm"/>
-        <div>
-          <h1 class="text-lg font-bold text-slate-800">Good Morning, Emily Johnson</h1>
-          <p class="text-xs text-slate-500">Tuesday, December 30</p>
-        </div>
-      </div>
-    </header>
+<body>
 
-    <!-- Course Selection Panel -->
-    <div class="bg-white rounded-2xl p-5 card-shadow h-[calc(100vh-7rem)] overflow-y-auto">
-      <h2 class="section-title mb-4">Course Selection</h2>
-      <p class="text-sm text-slate-600 mb-6">Bachelor of Technology in Computer Science & Engineering — Semester 5</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1">Minor Degree Course (MIN)</label>
-          <select class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option>Select Minor Subject...</option>
-            <option>Data Science</option>
-            <option>Cybersecurity</option>
-            <option>AI & ML</option>
-          </select>
+<div class="app-layout">
+
+
+    <!-- =====================================
+         GLOBAL SIDEBAR
+         ===================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Learning Hub -->
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+
+                <i class="fas fa-graduation-cap"></i>
+
+            </div>
+
+            <span>Learning Hub</span>
+
         </div>
 
-        <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1">Multi-Disciplinary Course (MDC)</label>
-          <select class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option>Select MDC Subject...</option>
-            <option>Environmental Studies</option>
-            <option>Economics</option>
-            <option>Psychology</option>
-          </select>
+
+        <!-- Navigation -->
+<nav class="sidebar-nav">
+
+    <a href="dashboard.html"
+       class="nav-item">
+
+        <i class="fas fa-home"></i>
+        <span>Dashboard</span>
+
+    </a>
+
+    <a href="task.html"
+       class="nav-item">
+
+        <i class="fas fa-tasks"></i>
+        <span>Task</span>
+
+    </a>
+
+    <a href="course.html"
+       class="nav-item active-nav">
+
+        <i class="fas fa-book"></i>
+        <span>Course Selection</span>
+
+    </a>
+
+    <a href="feedback.html"
+       class="nav-item">
+
+        <i class="fas fa-comment-dots"></i>
+        <span>Feedback &amp; Grievance</span>
+
+    </a>
+
+    <a href="internal.html"
+       class="nav-item">
+
+        <i class="fas fa-graduation-cap"></i>
+        <span>Academic</span>
+
+    </a>
+
+    <a href="notification.html"
+       class="nav-item">
+
+        <i class="fas fa-bell"></i>
+        <span>Notification</span>
+
+    </a>
+
+    <a href="settings.html"
+       class="nav-item">
+
+        <i class="fas fa-cog"></i>
+        <span>Settings</span>
+
+    </a>
+
+</nav>
+        <!-- Sidebar Logout -->
+
+        <div class="nav-logout">
+
+            <a href="../login.html"
+               class="nav-item">
+
+                <i class="fas fa-sign-out-alt"></i>
+
+                <span>Logout</span>
+
+            </a>
+
         </div>
 
-        <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1">Value Added Course (VAC)</label>
-          <select class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option>Select VAC Subject...</option>
-            <option>Soft Skills</option>
-            <option>Entrepreneurship</option>
-            <option>Design Thinking</option>
-          </select>
+
+    </aside>
+
+
+    <!-- Mobile overlay -->
+
+    <div class="sidebar-overlay"></div>
+
+
+
+    <!-- =====================================
+         MAIN CONTENT
+         ===================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             GLOBAL HEADER
+             ================================= -->
+
+        <div class="top-bar">
+
+
+            <!-- LEFT -->
+
+            <div class="top-bar-left">
+
+
+                <!-- Hamburger -->
+
+                <button class="menu-toggle"
+                        id="menuToggle"
+                        aria-label="Open menu">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+
+                <!-- Greeting -->
+
+                <div class="greeting-block">
+
+
+                    <!-- Avatar -->
+
+                    <div class="greeting-avatar">
+
+                        EJ
+
+                    </div>
+
+
+                    <div>
+
+                        <h1 class="greeting-title">
+
+                            Good morning, Emily
+
+                        </h1>
+
+
+                        <p class="greeting-date">
+
+                            Tuesday, December 30
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 RIGHT USER PROFILE
+                 ================================= -->
+
+            <div class="user-pill">
+
+
+                <div class="user-pill-info">
+
+                    <p class="user-pill-name">
+
+                        Emily Johnson
+
+                    </p>
+
+
+                    <span class="user-pill-role">
+
+                        STUDENT
+
+                    </span>
+
+                </div>
+
+
+                <!-- Same logout icon -->
+
+                <a href="../login.html"
+                   class="logout-btn"
+                   aria-label="Log out">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                </a>
+
+
+            </div>
+
+
         </div>
 
-        <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1">Skill Enhancement Course (SEC)</label>
-          <select class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option>Select SEC Subject...</option>
-            <option>Python Programming</option>
-            <option>Web Development</option>
-            <option>Mobile App Design</option>
-          </select>
-        </div>
-      </div>
 
-      <div class="text-right">
-        <button class="px-5 py-2 bg-blue-500 text-white text-sm font-semibold rounded-lg hover:bg-blue-600 transition">Done</button>
-      </div>
-    </div>
-  </main>
+
+        <!-- =================================
+             COURSE SELECTION CONTENT
+             ================================= -->
+
+        <div class="course-panel">
+
+
+            <!-- Academic Program -->
+
+            <div class="course-heading">
+
+
+                <span class="course-eyebrow">
+
+                    CURRENT ACADEMIC PROGRAM
+
+                </span>
+
+
+                <h1>
+
+                    Bachelor of Technology
+
+                </h1>
+
+
+                <p>
+
+                    Computer Science &amp; Engineering — Semester 5
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- Divider -->
+
+            <div class="course-divider"></div>
+
+
+
+            <!-- =================================
+                 COURSE GRID
+                 ================================= -->
+
+            <div class="course-grid">
+
+
+                <!-- MIN -->
+
+                <div class="course-card">
+
+
+                    <div class="course-card-title">
+
+                        <span class="course-code">
+
+                            MIN
+
+                        </span>
+
+
+                        <span>
+
+                            Minor Degree Course
+
+                        </span>
+
+                    </div>
+
+
+                    <select class="course-select">
+
+                        <option>
+
+                            Select Minor Subject...
+
+                        </option>
+
+                        <option>
+
+                            Data Science
+
+                        </option>
+
+                        <option>
+
+                            Cybersecurity
+
+                        </option>
+
+                        <option>
+
+                            AI &amp; ML
+
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+
+                <!-- MDC -->
+
+                <div class="course-card">
+
+
+                    <div class="course-card-title">
+
+                        <span class="course-code">
+
+                            MDC
+
+                        </span>
+
+
+                        <span>
+
+                            Multi-Disciplinary Course
+
+                        </span>
+
+                    </div>
+
+
+                    <select class="course-select">
+
+                        <option>
+
+                            Select MDC Subject...
+
+                        </option>
+
+                        <option>
+
+                            Environmental Studies
+
+                        </option>
+
+                        <option>
+
+                            Economics
+
+                        </option>
+
+                        <option>
+
+                            Psychology
+
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+
+                <!-- VAC -->
+
+                <div class="course-card">
+
+
+                    <div class="course-card-title">
+
+                        <span class="course-code">
+
+                            VAC
+
+                        </span>
+
+
+                        <span>
+
+                            Value Added Course
+
+                        </span>
+
+                    </div>
+
+
+                    <select class="course-select">
+
+                        <option>
+
+                            Select VAC Subject...
+
+                        </option>
+
+                        <option>
+
+                            Soft Skills
+
+                        </option>
+
+                        <option>
+
+                            Entrepreneurship
+
+                        </option>
+
+                        <option>
+
+                            Design Thinking
+
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+
+                <!-- SEC -->
+
+                <div class="course-card">
+
+
+                    <div class="course-card-title">
+
+                        <span class="course-code">
+
+                            SEC
+
+                        </span>
+
+
+                        <span>
+
+                            Skill Enhancement Course
+
+                        </span>
+
+                    </div>
+
+
+                    <select class="course-select">
+
+                        <option>
+
+                            Select SEC Subject...
+
+                        </option>
+
+                        <option>
+
+                            Python Programming
+
+                        </option>
+
+                        <option>
+
+                            Web Development
+
+                        </option>
+
+                        <option>
+
+                            Mobile App Design
+
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Divider -->
+
+            <div class="course-divider"></div>
+
+
+
+            <!-- Done -->
+
+            <div class="course-actions">
+
+
+                <button class="course-done-btn"
+                        type="button">
+
+                    <i class="fas fa-check-circle"></i>
+
+                    Done
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- GLOBAL JAVASCRIPT -->
+
+<script src="../js/global.js"></script>
+
+
 </body>
+
 </html>

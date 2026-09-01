@@ -8,31 +8,19 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Academic Records - Timetable</title>
+    <title>Academic Records - Learning Hub</title>
 
-
-    <!-- =====================================
-         GLOBAL THEME
-         ===================================== -->
-
+    <!-- GLOBAL THEME -->
     <link rel="stylesheet"
           href="../css/global_theme.css">
 
-
-    <!-- =====================================
-         ICONS
-         ===================================== -->
-
+    <!-- ICONS -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
-    <!-- =====================================
-         TIMETABLE CSS
-         ===================================== -->
-
+    <!-- ACADEMIC PAGE CSS -->
     <link rel="stylesheet"
-          href="css/timetable.css">
+          href="academic.css">
 
 </head>
 
@@ -44,7 +32,7 @@
 
 
     <!-- =====================================
-         SIDEBAR
+         GLOBAL SIDEBAR
          ===================================== -->
 
     <aside class="sidebar">
@@ -289,18 +277,19 @@
         </div>
 
 
+
         <!-- =================================
-             TIMETABLE CONTENT
+             ACADEMIC CONTENT
              ================================= -->
 
         <section class="academic-panel">
 
 
-            <!-- PAGE TITLE -->
+            <!-- Page Title -->
 
             <h2 class="academic-title">
 
-                Academic Records - Timetable
+                Academic Records - Attendance
 
             </h2>
 
@@ -316,7 +305,8 @@
                 <!-- Attendance -->
 
                 <a href="academic.html"
-                   class="academic-tab">
+                   class="academic-tab active"
+                   aria-current="page">
 
                     Attendance
 
@@ -333,11 +323,10 @@
                 </a>
 
 
-                <!-- Timetable ACTIVE -->
+                <!-- Timetable -->
 
                 <a href="timetable.html"
-                   class="academic-tab active"
-                   aria-current="page">
+                   class="academic-tab">
 
                     Timetable
 
@@ -357,58 +346,43 @@
             </nav>
 
 
+
             <!-- =================================
-                 TIMETABLE
+                 ATTENDANCE TABLE
                  ================================= -->
 
-            <div class="timetable-table-wrapper">
+            <div class="attendance-table-wrapper">
 
 
-                <table class="timetable-table">
+                <table class="attendance-table">
 
-
-                    <!-- TABLE HEADER -->
 
                     <thead>
 
                         <tr>
 
                             <th>
-                                Day / Time
+                                Subject Code
                             </th>
 
                             <th>
-                                09:00 -<br>
-                                10:00
+                                Subject Name
                             </th>
 
                             <th>
-                                10:00 -<br>
-                                11:00
+                                Total Hours
                             </th>
 
                             <th>
-                                11:00 -<br>
-                                12:00
+                                Attended
                             </th>
 
                             <th>
-                                12:00 -<br>
-                                01:00
+                                Percentage
                             </th>
 
                             <th>
-                                01:00 -<br>
-                                02:00
-                            </th>
-
-                            <th>
-                                02:00 -<br>
-                                03:00
-                            </th>
-
-                            <th>
-                                03:00 - 04:00
+                                Status
                             </th>
 
                         </tr>
@@ -416,234 +390,97 @@
                     </thead>
 
 
-                    <!-- TABLE BODY -->
-
                     <tbody>
 
 
-                        <!-- =================================
-                             MONDAY
-                             ================================= -->
+                        <!-- CS301 -->
 
                         <tr>
 
                             <td>
-                                Monday
+                                CS301
                             </td>
 
                             <td>
-                                CS301<br>
-                                (Lab 3)
+                                Database Management
                             </td>
 
                             <td>
-                                CS301<br>
-                                (Lab 3)
+                                45
                             </td>
 
                             <td>
-                                CS304<br>
-                                (Room 201)
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
+                                42
                             </td>
 
                             <td>
-                                CS302<br>
-                                (Room 105)
+                                93%
                             </td>
 
-                            <td>
-                                CS301<br>
-                                (Room 203)
-                            </td>
-
-                            <td>
-                                CS305 (Room 102)
+                            <td class="status-safe">
+                                Safe
                             </td>
 
                         </tr>
 
 
-                        <!-- =================================
-                             TUESDAY
-                             ================================= -->
+                        <!-- CS302 -->
 
                         <tr>
 
                             <td>
-                                Tuesday
+                                CS302
                             </td>
 
                             <td>
-                                CS302<br>
-                                (Room 105)
+                                Operating Systems
                             </td>
 
                             <td>
-                                CS305<br>
-                                (Room 102)
+                                45
                             </td>
 
                             <td>
-                                CS301<br>
-                                (Room 203)
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
+                                35
                             </td>
 
                             <td>
-                                CS304<br>
-                                (Room 201)
+                                77%
                             </td>
 
-                            <td>
-                                CS305<br>
-                                (Room 102)
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
+                            <td class="status-warning">
+                                Warning
                             </td>
 
                         </tr>
 
 
-                        <!-- =================================
-                             WEDNESDAY
-                             ================================= -->
+                        <!-- CS304 -->
 
                         <tr>
 
                             <td>
-                                Wednesday
+                                CS304
                             </td>
 
                             <td>
-                                CS305<br>
-                                (Room 102)
+                                Software Engineering
                             </td>
 
                             <td>
-                                CS304<br>
-                                (Room 201)
+                                42
                             </td>
 
                             <td>
-                                CS302<br>
-                                (Room 105)
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
+                                40
                             </td>
 
                             <td>
-                                LIBRARY<br>
-                                (Main Block)
+                                95%
                             </td>
 
-                            <td>
-                                SPORTS
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
-                            </td>
-
-                        </tr>
-
-
-                        <!-- =================================
-                             THURSDAY
-                             ================================= -->
-
-                        <tr>
-
-                            <td>
-                                Thursday
-                            </td>
-
-                            <td>
-                                CS301<br>
-                                (Room 203)
-                            </td>
-
-                            <td>
-                                CS302<br>
-                                (Room 105)
-                            </td>
-
-                            <td>
-                                CS301<br>
-                                (Room 203)
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
-                            </td>
-
-                            <td>
-                                CS304<br>
-                                (Lab 1)
-                            </td>
-
-                            <td>
-                                CS304<br>
-                                (Lab 1)
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
-                            </td>
-
-                        </tr>
-
-
-                        <!-- =================================
-                             FRIDAY
-                             ================================= -->
-
-                        <tr>
-
-                            <td>
-                                Friday
-                            </td>
-
-                            <td>
-                                CS305<br>
-                                (Room 102)
-                            </td>
-
-                            <td>
-                                CS302<br>
-                                (Room 105)
-                            </td>
-
-                            <td>
-                                CS301<br>
-                                (Room 203)
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
-                            </td>
-
-                            <td class="timetable-empty">
-                                —
-                            </td>
-
-                            <td>
-                                MENTORING<br>
-                                (Dept Office)
+                            <td class="status-safe">
+                                Safe
                             </td>
 
                         </tr>
@@ -667,9 +504,8 @@
 </div>
 
 
-<!-- =====================================
-     GLOBAL JAVASCRIPT
-     ===================================== -->
+
+<!-- GLOBAL JAVASCRIPT -->
 
 <script src="../js/global.js"></script>
 
